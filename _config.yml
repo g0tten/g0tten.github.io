@@ -31,6 +31,8 @@ google_tracking_id: ""
 google_site_verification: ""
 disqus_shortname: "gomezabajo"
 
+categories: default
+
 # Build settings
 markdown: kramdown
 gems:
