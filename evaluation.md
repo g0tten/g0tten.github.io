@@ -1,7 +1,3 @@
-## Gotten for cloud evaluation project
-
-### Gotten for cloud simulators running example
-
 The goal here is to test cloud simulators that reproduce the behavior of data centres upon certain workload. Then, the input of these simulators are models of data centres along with models of workloads.
 
 The following figure shows a meta-model to represent data centres, where a DataCentre is made of Network and any number of Racks, and each Rack contains several Boards. Boards are connected via Switches and have computing nodes with characteristics described by NodeTypes:
