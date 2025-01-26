@@ -1,5 +1,3 @@
-## Gotten for Video Streaming APIs
-
 Gotten, Generic MDE framework fOr meTamorphic TEstiNg, for Video Streaming APIs.
 
 ### Gotten for YouTube and Vimeo
