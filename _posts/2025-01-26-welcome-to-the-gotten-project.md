@@ -3,7 +3,6 @@ layout: post
 title:  "Welcome to the Gotten Framework Page"
 date:   2025-01-26 09:00:00
 ---
-## Welcome to the Gotten Framework Page
 
 ### The Gotten environment
 
