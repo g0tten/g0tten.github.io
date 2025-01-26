@@ -1,6 +1,4 @@
 
-### The Gotten environment
-
 We propose a model-driven engineering approach to automate the construction of Metamorphic Testing (MT) environments. Starting from a meta-model capturing the domain concepts, and a description of the domain execution environment, our approach produces an MT environment featuring comprehensive support for the MT process. This includes the definition of domain-specific Metamorphic Relations (MRs), their evaluation, detailed reporting of the testing results, and the automated search-based generation of follow-up test cases.
 
 ### The mrDSL language for the definition and execution of MRs
