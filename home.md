@@ -56,9 +56,10 @@ algorithms [Random, NSGAII, NSGAIII, eMOEA]
 
 ![Gotten installation](https://raw.githubusercontent.com/g0tten/images/main/ide/gotten_update-site.png)
 
-You also need to have installed [Java 11](https://www.oracle.com/es/java/technologies/javase/jdk11-archive-downloads.html) in your local machine: 
+<!--You also need to have installed [Java 11](https://www.oracle.com/es/java/technologies/javase/jdk11-archive-downloads.html) in your local machine: 
 
 ![Java 11](https://raw.githubusercontent.com/g0tten/images/main/ide/java11.png)
+-->
 
 - For Windows users, we provide this [Standalone Eclipse+Gotten for Windows](https://www.dropbox.com/s/fcv7cjkhlvk5yah/eclipse.zip?dl=0) version.
 - For Ubuntu users, we provide this [Standalone Eclipse+Gotten for Ubuntu](https://www.dropbox.com/s/t30w6kx1y41ik4d/eclipse.zip?dl=0) version.
