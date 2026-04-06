@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
     <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons+Extended">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Titillium+Web:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css">
     {% for css in layout.css %}
     {% if css contains "//" %}
@@ -49,10 +52,10 @@
       </nav>
 
       <ul id="slide-out" class="side-nav fixed app-sidenav">
-        <li>
-          <a class="brand-lockup" href="{{site.baseurl}}/" >
-            <img src="{{site.baseurl}}/assets/res/gotten.png" style="margin: auto; width: 25%;" alt="Gotten logo">
-          </a>
+		<li class="brand-lockup-row">
+			<a class="brand-lockup brand-lockup--gotten" href="{{site.baseurl}}/" aria-label="Gotten home">
+				<img class="brand-logo brand-logo--gotten" src="{{site.baseurl}}/assets/res/gotten.png" alt="Gotten logo">
+			</a>
 		</li>
 		<li class="brand-panel">
           <p class="brand-summary">{{site.description}}</p>
@@ -76,9 +79,9 @@
         <li class="nav-section-label">Downloads</li>
         <li><a class="waves-effect" href="{{site.update_site_url}}"><i class="material-icons-extended">download</i>Eclipse update site</a></li>
         <li><a class="waves-effect" href="{{site.standalone_url}}" target="_blank"><i class="material-icons-extended">settings</i>Standalone Eclipse+Gotten</a></li>
-		<li>
-          <a class="brand-lockup" href="https://www.eclipse.org/">
-            <img src="{{site.baseurl}}/assets/res/white.png" alt="Eclipse logo">
+		<li class="brand-lockup-row brand-lockup-row--footer">
+          <a class="brand-lockup brand-lockup--eclipse" href="https://www.eclipse.org/" aria-label="Eclipse">
+            <img class="brand-logo brand-logo--eclipse" src="{{site.baseurl}}/assets/res/white.png" alt="Eclipse logo">
           </a>
 		</li>
       </ul>

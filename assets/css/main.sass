@@ -32,7 +32,7 @@ body
   flex-direction: column
   background: linear-gradient(180deg, #f7f9fc 0%, #f2f5fa 100%)
   color: var(--text)
-  font-family: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif
+  font-family: "Source Sans 3", "Segoe UI", Roboto, Helvetica, Arial, sans-serif
   -webkit-font-smoothing: antialiased
   text-rendering: optimizeLegibility
 
@@ -42,7 +42,7 @@ body
 main h1,
 main h2,
 main h3
-  font-family: Georgia, "Times New Roman", serif
+  font-family: "Titillium Web", "Segoe UI", Arial, sans-serif
   letter-spacing: -.01em
 
 body::before
@@ -100,9 +100,10 @@ footer
   background: transparent
 
 .page-title
-  font-size: .94rem
+  font-family: "Titillium Web", "Segoe UI", Arial, sans-serif
+  font-size: 1rem
   font-weight: 700
-  letter-spacing: .12em
+  letter-spacing: .08em
   text-transform: uppercase
   color: var(--text-strong)
 
@@ -122,8 +123,9 @@ footer
   overflow-y: auto
 
 .app-sidenav li > a
+  font-family: "Titillium Web", "Segoe UI", Arial, sans-serif
   color: var(--text)
-  font-weight: 500
+  font-weight: 600
   border-radius: 12px
   margin: 0 16px 6px
   transition: background-color .2s ease, color .2s ease, transform .2s ease, border-color .2s ease
@@ -142,28 +144,59 @@ footer
   color: var(--brand-strong)
   font-weight: 700
 
+.brand-lockup-row
+  padding: 24px 22px 10px
+  display: flex
+  justify-content: center
+
+.brand-lockup-row--footer
+  padding-top: 18px
+  padding-bottom: 24px
+
 .brand-panel
-  padding: 30px 22px 20px
+  padding: 24px 22px 20px
   margin-bottom: 12px
 
 .brand-lockup
   display: inline-flex
+  align-items: center
+  justify-content: center
   padding: 12px 16px
   background: #ffffff
   border: 1px solid var(--border)
-  border-radius: 16px
+  border-radius: 18px
   box-shadow: var(--shadow-sm)
-  margin-bottom: 18px
+  margin: 0
 
-.brand-lockup img
-  max-width: 190px
+.brand-lockup--gotten
+  width: 118px
+  height: 118px
+  padding: 10px
+  border-radius: 28px
+
+.brand-lockup--eclipse
+  width: 100%
+  max-width: 228px
+  padding: 12px 18px
+
+.brand-logo
+  display: block
   width: 100%
   height: auto
+
+.brand-logo--gotten
+  width: 94px
+  height: 94px
+  object-fit: contain
+  border-radius: 22px
+
+.brand-logo--eclipse
+  max-width: 190px
 
 .brand-summary
   margin: 0 0 18px
   color: var(--muted)
-  font-size: .98rem
+  font-size: 1rem
 
 .brand-actions
   display: flex
@@ -172,6 +205,7 @@ footer
 
 .brand-actions .btn,
 .hero-actions .btn
+  font-family: "Titillium Web", "Segoe UI", Arial, sans-serif
   background: var(--brand)
   border-radius: 999px
   box-shadow: none
@@ -185,6 +219,7 @@ footer
 
 .brand-actions .btn-flat,
 .btn.btn-ghost
+  font-family: "Titillium Web", "Segoe UI", Arial, sans-serif
   color: var(--brand)
   border-radius: 999px
   background: rgba(61, 58, 143, 0.06)
@@ -198,10 +233,11 @@ footer
   color: var(--brand-strong)
 
 .nav-section-label
+  font-family: "Titillium Web", "Segoe UI", Arial, sans-serif
   color: var(--muted-soft)
-  font-size: .76rem
+  font-size: .8rem
   font-weight: 700
-  letter-spacing: .14em
+  letter-spacing: .12em
   text-transform: uppercase
   margin: 18px 28px 8px
 
@@ -639,3 +675,11 @@ main hr
   .brand-actions .btn-flat
     width: 100%
     text-align: center
+
+  .brand-lockup--gotten
+    width: 104px
+    height: 104px
+
+  .brand-logo--gotten
+    width: 84px
+    height: 84px
