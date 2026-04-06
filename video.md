@@ -3,17 +3,6 @@ layout: page
 title: "Gotten for Video Streaming"
 ---
 
-<div class="callout-grid">
-  <div class="callout-card">
-    <h3>Scenario</h3>
-    <p>This example shows how Gotten models and tests behaviours across video streaming APIs such as YouTube and Vimeo.</p>
-  </div>
-  <div class="callout-card">
-    <h3>Focus</h3>
-    <p>The relations below cover search order, date ranges, spatial radius, result counts, and update operations.</p>
-  </div>
-</div>
-
 Gotten, Generic MDE framework fOr meTamorphic TEstiNg, for Video Streaming APIs.
 
 ### Gotten for video streaming APIs running example

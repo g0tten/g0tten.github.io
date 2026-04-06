@@ -3,16 +3,7 @@ layout: page
 title: "Gotten for Cloud"
 ---
 
-<div class="callout-grid">
-  <div class="callout-card">
-    <h3>Scenario</h3>
-    <p>This example applies Gotten to cloud simulators and compares models of data centres and workloads.</p>
-  </div>
-  <div class="callout-card">
-    <h3>Focus</h3>
-    <p>The relations below reason about CPU, machine count, storage, network, memory, time, and energy consumption.</p>
-  </div>
-</div>
+Gotten, Generic MDE framework fOr meTamorphic TEstiNg, for Data Centres.
 
 The goal here is to test cloud simulators that reproduce the behavior of data centres upon certain workload. Then, the input of these simulators are models of data centres along with models of workloads.
 
