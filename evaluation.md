@@ -1,3 +1,19 @@
+---
+layout: page
+title: "Gotten for Cloud"
+---
+
+<div class="callout-grid">
+  <div class="callout-card">
+    <h3>Scenario</h3>
+    <p>This example applies Gotten to cloud simulators and compares models of data centres and workloads.</p>
+  </div>
+  <div class="callout-card">
+    <h3>Focus</h3>
+    <p>The relations below reason about CPU, machine count, storage, network, memory, time, and energy consumption.</p>
+  </div>
+</div>
+
 The goal here is to test cloud simulators that reproduce the behavior of data centres upon certain workload. Then, the input of these simulators are models of data centres along with models of workloads.
 
 The following figure shows a meta-model to represent data centres, where a DataCentre is made of Network and any number of Racks, and each Rack contains several Boards. Boards are connected via Switches and have computing nodes with characteristics described by NodeTypes:
@@ -6,7 +22,7 @@ The following figure shows a meta-model to represent data centres, where a DataC
 
 ### The mrDSL program for data centres
 
-Since it is difficult to establish an oracle to test if a data centre simulator S performs as expected, we use MT. The following listing shows the mrDSL program created with the Gotten framework to apply MT to this data centre simulators domain: 
+Since it is difficult to establish an oracle to test if a data centre simulator S performs as expected, we use MT. The following listing shows the mrDSL program created with the Gotten framework to apply MT to this data centre simulators domain:
 
 ```
 metamodel datacentre "/sample.gotten/model/datac.ecore" with m1, m2
@@ -50,7 +66,7 @@ MetamorphicRelations {
 Below we provide a brief description of these 6 MRs for cloud simulators:
 
 Relation | Description |
---- | :--- | 
+--- | :--- |
 MR1 | The cloud m1 has a better CPU than m2. The workloads w1 and w2 are equal. |
 &nbsp; | MR1i = [( CPU(m1) > CPU(m2) ) and ((w1) == (w2)) ] |
 &nbsp; | The energy required to execute w1 over m1 should be less than or equal to the energy required to execute w2 over m2. |
@@ -84,4 +100,3 @@ MR6 | The clouds m1 and m2 are equal. The workload w1 contains w2. |
 ### Acknowledgements
 
 This work has been funded by the Spanish Ministry of Science (RTI2018-095255-B-I00, project "MASSIVE") and the R&D programme of Madrid (P2018/TCS-4314, project "[FORTE](https://antares.sip.ucm.es/forte-cm/)").
-

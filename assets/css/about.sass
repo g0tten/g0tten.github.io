@@ -1,16 +1,26 @@
 ---
 ---
-@mixin transition($args...)
-  -webkit-transition: $args
-  -moz-transition: $args
-  -ms-transition: $args
-  -o-transition: $args
-  transition: $args
+.about-hero
+  display: grid
+  grid-template-columns: minmax(220px, 320px) minmax(0, 1fr)
+  gap: 24px
+  align-items: center
 
-.user-pic
-  img
-    width: 100px
-    height: auto
+.about-hero__media img
+  width: 100%
+  height: auto
+  box-shadow: none
+  border-radius: 18px
+  background: rgba(255, 255, 255, 0.04)
+  padding: 16px
 
-.hidden
-  display: none
+.about-hero__copy h2
+  margin: 12px 0
+  font-size: clamp(1.8rem, 3vw, 2.5rem)
+
+.about-card
+  min-height: 100%
+
+@media only screen and (max-width: 768px)
+  .about-hero
+    grid-template-columns: 1fr

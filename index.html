@@ -1,74 +1,107 @@
 ---
-layout: page
+layout: default
+title: "Gotten"
 css: ["index.css"]
 ---
-<html lang="en-US">
-  <head>
-  <script type="text/javascript"> location.href = "https://g0tten.github.io/home.html";</script>
-  </head>
-  <title>
-  </title>
-  <body>
-<div class="row">
-  {% for post in paginator.posts %}
-  <div class="col s12">
-    <div class="card hoverable">
-      <div class="card-content">
-        <span id="post-title" class="card-title">{{post.title}}</span>
-        <p id="post-date">
-          <i class="material-icons">date_range</i>
-          {{post.date | date: "%d/%m/%Y %H:%M"}}
-        </p>
-        <p id="post-content">{{post.excerpt | remove: '<p>' | remove: '</p>'}}</p>
-      </div>
-      <div class="card-action">
-        <a href="{{post.url | prepend: site.baseurl}}">
-          Read More
-        </a>
-      </div>
+
+<section class="hero-panel">
+  <div class="hero-panel__copy">
+    <span class="eyebrow">Model-driven metamorphic testing</span>
+    <h1>Engineer domain-specific MT environments with a clearer, faster workflow.</h1>
+    <p class="hero-lead">
+      Gotten helps you define metamorphic relations, execute them against processors,
+      report results, and generate follow-up test cases from domain models.
+    </p>
+    <div class="hero-actions">
+      <a class="btn waves-effect waves-light" href="{{site.baseurl}}/home.html">Explore the framework</a>
+      <a class="btn btn-ghost waves-effect" href="{{site.update_site_url}}">Install from update site</a>
     </div>
   </div>
-  {% endfor %}
-  <div class="col s12 center-align">
-    <ul class="pagination">
-      <li class="{% unless paginator.previous_page %}disabled{% else %}waves-effect{% endunless %}">
-        {% if paginator.previous_page %}
-        {% if paginator.previous_page == 1 %}
-        <a href="{{site.baseurl}}/">
-        {% else %}
-        <a href="{{site.baseurl}}/page{{paginator.previous_page}}">
-        {% endif %}
-        {% else %}
-        <a href="#!">
-        {% endif %}
-          <i class="material-icons">chevron_left</i>
-        </a>
-      </li>
-      {% if paginator.page == 1 %}
-      <li class="active teal">
-        <a href="#!">1</a>
-      {% else %}
-      <li class="waves-effect">
-        <a href="{{site.baseurl}}/">1</a>
-      {% endif %}
-      </li>
-      {% for count in (2..paginator.total_pages) %}
-      {% if count == paginator.page %}
-      <li class="active teal"><a href="#!">{{count}}</a></li>
-      {% else %}
-      <li class="waves-effect"><a href="{{site.baseurl}}/page{{count}}">{{count}}</a></li>
-      {% endif %}
-      {% endfor %}
-      <li class="{% unless paginator.next_page %}disabled{% else %}waves-effect{% endunless %}">
-        {% if paginator.next_page %}
-        <a href="{{site.baseurl}}/page{{paginator.next_page}}">
-        {% else %}
-        <a href="#!">
-        {% endif %}
-          <i class="material-icons">chevron_right</i>
-        </a>
-      </li>
-    </ul>
+
+  <div class="hero-panel__aside">
+    <div class="metric-card">
+      <span class="metric-card__label">Languages</span>
+      <strong>mrDSL + fowDSL</strong>
+      <p>Define relations, processors, and follow-up generation strategies in a domain-oriented way.</p>
+    </div>
+    <div class="metric-card">
+      <span class="metric-card__label">Domains</span>
+      <strong>Cloud + Video</strong>
+      <p>Reusable ideas demonstrated on cloud simulators and video streaming APIs.</p>
+    </div>
+    <div class="metric-card">
+      <span class="metric-card__label">Workflow</span>
+      <strong>Model → Execute → Analyse</strong>
+      <p>Support the MT lifecycle from domain modelling to evaluation and reporting.</p>
+    </div>
   </div>
-</div>  </body>
-</html>
+</section>
+
+<section class="section-block">
+  <div class="section-heading">
+    <span class="eyebrow">Why Gotten</span>
+    <h2>Designed for research-grade experimentation and practical tool support.</h2>
+  </div>
+
+  <div class="feature-grid">
+    <article class="info-card">
+      <h3>Define metamorphic relations</h3>
+      <p>Describe domain meta-models, input features, output features, processor data, and MRs in mrDSL.</p>
+    </article>
+    <article class="info-card">
+      <h3>Generate follow-up tests</h3>
+      <p>Use fowDSL to search for source-to-follow-up transformations with configurable limits and objectives.</p>
+    </article>
+    <article class="info-card">
+      <h3>Compare domains consistently</h3>
+      <p>Apply the same MT ideas to different domains while keeping the environment tailored to each domain model.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-block">
+  <div class="section-heading">
+    <span class="eyebrow">Use cases</span>
+    <h2>Two example domains already showcased in the site.</h2>
+  </div>
+
+  <div class="domain-grid">
+    <article class="info-card domain-card">
+      <span class="domain-card__tag">Cloud simulators</span>
+      <h3>Evaluate performance-related relations across data centre models.</h3>
+      <p>Explore relations involving CPU, storage, network, memory, energy consumption, and execution time.</p>
+      <a href="{{site.baseurl}}/evaluation.html">Open the cloud example</a>
+    </article>
+    <article class="info-card domain-card">
+      <span class="domain-card__tag">Video streaming APIs</span>
+      <h3>Model searches and updates over platforms such as YouTube and Vimeo.</h3>
+      <p>Validate search order, radius, date ranges, result sets, and update behaviour across processors.</p>
+      <a href="{{site.baseurl}}/video.html">Open the video example</a>
+    </article>
+  </div>
+</section>
+
+<section class="section-block section-block--accent">
+  <div class="section-heading">
+    <span class="eyebrow">Get started</span>
+    <h2>Choose the entry point that fits your workflow.</h2>
+  </div>
+
+  <div class="resource-grid">
+    <article class="info-card">
+      <h3>Documentation</h3>
+      <p>Read the framework overview, DSL examples, installation options, and links to publications.</p>
+      <a href="{{site.baseurl}}/home.html">Read the overview</a>
+    </article>
+    <article class="info-card">
+      <h3>Installation</h3>
+      <p>Install Gotten through the Eclipse update site or use the standalone package.</p>
+      <a href="{{site.update_site_url}}">Open the update site</a>
+    </article>
+    <article class="info-card">
+      <h3>Source code</h3>
+      <p>Browse public repositories and project assets maintained under the Gotten GitHub organisation.</p>
+      <a href="{{site.baseurl}}/projects.html">Browse repositories</a>
+    </article>
+  </div>
+</section>

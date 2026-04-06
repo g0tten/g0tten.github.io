@@ -2,9 +2,13 @@
 layout: default
 css: ["page.css"]
 ---
-<div id="page-info">
-  <h3>{{page.title}}</h3>
-</div>
-<div class="row">
-  {{ content }}
-</div>
+<section class="page-hero">
+  <span class="eyebrow">Gotten</span>
+  <h1>{{page.title}}</h1>
+</section>
+
+<section class="content-surface">
+  <div class="row page-content">
+    {{ content }}
+  </div>
+</section>

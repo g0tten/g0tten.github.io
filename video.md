@@ -1,3 +1,19 @@
+---
+layout: page
+title: "Gotten for Video Streaming"
+---
+
+<div class="callout-grid">
+  <div class="callout-card">
+    <h3>Scenario</h3>
+    <p>This example shows how Gotten models and tests behaviours across video streaming APIs such as YouTube and Vimeo.</p>
+  </div>
+  <div class="callout-card">
+    <h3>Focus</h3>
+    <p>The relations below cover search order, date ranges, spatial radius, result counts, and update operations.</p>
+  </div>
+</div>
+
 Gotten, Generic MDE framework fOr meTamorphic TEstiNg, for Video Streaming APIs.
 
 ### Gotten for video streaming APIs running example
@@ -14,15 +30,15 @@ The following figure shows a meta-model to represent video streaming APIs. Class
 
 ### The mrDSL program for video streaming APIs
 
-Since it is difficult to establish an oracle to test if a video streaming API performs as expected, we use MT. The following listing shows the mrDSL program created with the Gotten framework to apply MT to this video streaming APIs domain: 
+Since it is difficult to establish an oracle to test if a video streaming API performs as expected, we use MT. The following listing shows the mrDSL program created with the Gotten framework to apply MT to this video streaming APIs domain:
 
 ```
 metamodel videostream "/video/model/VideoStream.ecore" with m1, m2
-models "/video/model/videotc" 
+models "/video/model/videotc"
 
 videostream input Features {
-	context VideoAPITest def: IsFullSearch: Boolean = 
-          request.oclIsTypeOf(SearchVideo) 
+	context VideoAPITest def: IsFullSearch: Boolean =
+          request.oclIsTypeOf(SearchVideo)
           and request.oclAsType(SearchVideo).maxResults = -1
   context VideoAPITest def: IsUpdate: Boolean = request.oclIsTypeOf(UpdateVideo)
   context SearchVideo def: MaxResults: Int = maxResults
@@ -30,7 +46,7 @@ videostream input Features {
   context SearchVideo def: UntilYear: Int = until.year
   context SearchVideo def: FromYear: Int = from.year
   context SearchVideo def: Radius: Double = position.radius
-}  
+}
 
 output Features {
   NVideos : Long
@@ -43,18 +59,18 @@ Processor {
   Name: String
   Version: String
 }
- 
+
 MetamorphicRelations {
- MR1 = [ (IsFullSearch(m1) and SearchOrder(m1) <> SearchOrder(m2)) 
+ MR1 = [ (IsFullSearch(m1) and SearchOrder(m1) <> SearchOrder(m2))
          implies (NVideos(m1) == NVideos(m2)) ]
  MR2 = [ (IsFullSearch(m1) and UntilYear(m1) < FromYear(m2))
          implies (Results(m1)->excludes(Results(m2))) ]
  MR3 = [ (IsFullSearch(m1) and Radius(m1) > Radius(m2))
          implies (Results(m1)->includes(Results(m2))) ]
- MR4 = [ (IsFullSearch(m1) and MaxResults(m1) >= MaxResults(m2)) 
+ MR4 = [ (IsFullSearch(m1) and MaxResults(m1) >= MaxResults(m2))
          implies (NVideos(m1) >= NVideos(m2))]
  MR5 = [ (IsUpdate(m1) and m1 == m2)
-         implies 
+         implies
          (OutputVideoId(m1) <> OutputVideoId(m2) and
          OutputVideoTitle(m1) == OutputVideoTitle(m2))]
 }
@@ -65,7 +81,7 @@ MetamorphicRelations {
 Below we provide a brief description of these 5 MRs for video streaming APIs:
 
 Relation | Description |
---- | :--- | 
+--- | :--- |
 MR1 | The search order of m1 is different to the search order of m2. |
 &nbsp; | MR1i = [ (IsFullSearch(m1) and SearchOrder(m1) <> SearchOrder(m2))  ] |
 &nbsp; | The number of videos returned by the search m1 should be equal to the number of videos returned by the search m2. |

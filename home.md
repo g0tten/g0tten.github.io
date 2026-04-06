@@ -1,9 +1,24 @@
+---
+layout: page
+title: "Overview"
+---
+
+<div class="callout-grid">
+  <div class="callout-card">
+    <h3>What you can do with Gotten</h3>
+    <p>Define domain-specific metamorphic relations with mrDSL, execute them against processors, and search for follow-up test cases with fowDSL.</p>
+  </div>
+  <div class="callout-card">
+    <h3>What this page contains</h3>
+    <p>The framework overview below includes the core idea, both DSLs, installation options, example projects, demo videos, contributors, and publications.</p>
+  </div>
+</div>
 
 We propose a model-driven engineering approach to automate the construction of Metamorphic Testing (MT) environments. Starting from a meta-model capturing the domain concepts, and a description of the domain execution environment, our approach produces an MT environment featuring comprehensive support for the MT process. This includes the definition of domain-specific Metamorphic Relations (MRs), their evaluation, detailed reporting of the testing results, and the automated search-based generation of follow-up test cases.
 
 ### The mrDSL language for the definition and execution of MRs
 
-With that purpose, the Gotten environment provides a DSL called mrDSL to define and execute MRs. There you can declare the domain meta-models and the instance names used, the input features, that are defined by means of an OCL expression, the output features, the processors' attributes and the MRs. 
+With that purpose, the Gotten environment provides a DSL called mrDSL to define and execute MRs. There you can declare the domain meta-models and the instance names used, the input features, that are defined by means of an OCL expression, the output features, the processors' attributes and the MRs.
 
 ```
 metamodel datacentre "/sample.gotten/model/datac.ecore" with m1, m2
@@ -28,7 +43,6 @@ MetamorphicRelations {
 	MR1 = [(( NNodes(m1) > NNodes(m2) ) and ((w1) == (w2)) ) implies ((Time(m1) <= Time(m2)))]
 	MR2 = [(( CPU(m1) > CPU(m2) ) and ((w1) == (w2)) ) implies ((Energy(m1) <= Energy(m2)))]
 }
-
 ```
 
 ### The fowDSL language for the follow-up test cases generation
@@ -55,11 +69,6 @@ algorithms [Random, NSGAII, NSGAIII, eMOEA]
 - [Gotten environment update-site](https://g0tten.github.io/gotten/update-site) to be used from the Eclipse Install New Software facility:
 
 ![Gotten installation](https://raw.githubusercontent.com/g0tten/images/main/ide/gotten_update-site.png)
-
-<!--You also need to have installed [Java 11](https://www.oracle.com/es/java/technologies/javase/jdk11-archive-downloads.html) in your local machine: 
-
-![Java 11](https://raw.githubusercontent.com/g0tten/images/main/ide/java11.png)
--->
 
 - For Windows users, we provide this [Standalone Eclipse+Gotten for Windows](https://www.dropbox.com/scl/fi/a88m5zd4y4umlbo4zyguj/eclipse.zip?rlkey=722pcm0biosv8u4rnpfzegyw8&dl=0) version.
 - For Ubuntu users, we provide this [Standalone Eclipse+Gotten for Ubuntu](https://www.dropbox.com/scl/fi/qnwgkz7r0dk0aa97qe5m0/eclipse.zip?rlkey=oqfhb39zwi8ncqp1ogs20aogz&dl=0) version.

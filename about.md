@@ -1,7 +1,6 @@
 ---
 layout: page
-title: "About Me"
-css: ["about.css", "animate.css", "morphext.css"]
-js: ["morphext.min.js", "about.js"]
+title: "About Gotten"
+css: ["about.css"]
 ---
 {% include about.html %}

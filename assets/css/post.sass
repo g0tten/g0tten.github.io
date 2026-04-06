@@ -1,73 +1,53 @@
 ---
 ---
-@mixin transition($args...)
-  -webkit-transition: $args
-  -moz-transition: $args
-  -ms-transition: $args
-  -o-transition: $args
-  transition: $args
-
-main
-  div
-    .divider
-      margin: 10px 0
-
-    &.highlighter-rouge
-      margin: 1em 20px
-
-      pre
-        padding: 5px
-
-  figure
-    &.highlight
-      margin: 1em 20px
-
-      pre
-        white-space: pre-wrap
-
-      table
-        width: auto
+.content-surface--post
+  padding-top: 20px
 
 #post-info
-  h3
-    font-weight: bold
-    margin-bottom: 15px
+  margin-bottom: 16px
 
-  ul
-    &:not(.browser-default)
-      padding-left: 0
-      width: 40%
+#post-info ul:not(.browser-default)
+  padding-left: 0
+  margin: 0
 
-      li
-        list-style-type: none
+#post-info li
+  list-style: none
 
-  span
-    font-size: 14px
-    display: block
-    margin-bottom: 5px
+#post-info .collapsible
+  border: 1px solid rgba(255, 255, 255, 0.08)
+  box-shadow: none
+  border-radius: 18px
+  overflow: hidden
 
-    i
-      font-size: 11.5px
-      margin-right: 10px
+#post-info .collapsible-header,
+#post-info .collapsible-body
+  background: rgba(255, 255, 255, 0.03)
+  border-bottom: 0
+  color: var(--text)
 
-      &#indicate
-        font-size: 20px
+#post-info .collapsible-header span,
+#post-info .collapsible-body span
+  display: block
+  width: 100%
 
-    .chip
-      color: #616161
-      margin-right: 5px
+#post-info .collapsible-body span + span
+  margin-top: 12px
 
-      &:hover
-        color: #fff
-        background-color: #616161
+#post-info i
+  font-size: 1rem
+  margin-right: 10px
 
-      @include transition(all .3s ease-in-out)
+#post-info #indicate
+  font-size: 1.2rem
 
-@media only screen and (max-width: 992px)
-  #post-info
-    h3
-      text-align: center
+main figure.highlight,
+main div.highlighter-rouge
+  margin: 22px 0
 
-    ul
-      &:not(.browser-default)
-        width: 100%
+main figure.highlight pre,
+main div.highlighter-rouge pre
+  white-space: pre-wrap
+  border-radius: 18px
+
+main figure.highlight table
+  width: 100%

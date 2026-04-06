@@ -1,38 +1,40 @@
-{% assign sorted_repos = (site.github.public_repositories | sort: 'stargazers_count') | reverse  %}
-<div class="col s12 switch">
+{% assign sorted_repos = (site.github.public_repositories | sort: 'stargazers_count') | reverse %}
+<div class="col s12">
+  <div class="section-banner">
+    <span class="eyebrow">Open source</span>
+    <h2>Public repositories from the Gotten organisation</h2>
+    <p>Use the filter to hide forks and focus on primary repositories.</p>
+  </div>
+</div>
+
+<div class="col s12 switch filter-switch">
   <label>
-    Show forked projects
-    <input class="fork-switch" type="checkbox" checked="1" onchange="toggleForked()">
+    Hide forked repositories
+    <input class="fork-switch" type="checkbox" onchange="toggleForked()">
     <span class="lever"></span>
   </label>
 </div>
+
 {% for repo in sorted_repos %}
-<div class="col s12 m6 l4" {% if repo.fork %}id="forked"{% endif %}>
-  <div class="card hoverable">
-    <div class="card-image waves-effect waves-block waves-light geopattern activator" data-pattern-id="{{repo.name}}">
-      <i class="material-icons waves-effect waves-block waves-light">more_vert</i>
-      <a class="card-title center-align valign-wrapper" href="{{repo.html_url}}" target="_blank">{{repo.name}}</a>
-    </div>
-    <div class="card-content valign-wrapper center-align activator">
-      <span class="activator grey-text text-darken-1">{{repo.description}}</span>
-    </div>
-    <div class="card-reveal">
-      <div class="card-reveal-content">
-        <span class="card-title grey-text text-darken-4">Statistics<i class="material-icons right">close</i></span>
-        <span class="tooltipped" data-position="bottom" data-delay="30" data-tooltip="{{repo.stargazers_count}} stars">
-          <i class="material-icons">star</i>
-          {{repo.stargazers_count}}
-        </span>
-        <span class="tooltipped" data-position="bottom" data-delay="30" data-tooltip="{{repo.forks_count}} forks">
-          <i class="material-icons">call_split</i>
-          {{repo.forks_count}}
-        </span>
-        <span class="tooltipped" data-position="bottom" data-delay="30" data-tooltip="Last updated：{{repo.updated_at}}">
-          <i class="material-icons">access_time</i>
-          <time datetime="{{repo.updated_at}}" title="{{repo.updated_at}}">{{repo.updated_at | date: '%Y-%m-%d'}}</time>
-        </span>
+<div class="col s12 m6 l4 repo-item" {% if repo.fork %}data-fork="true"{% endif %}>
+  <article class="repo-card hoverable">
+    <div class="repo-card__visual geopattern" data-pattern-id="{{repo.name}}">
+      <div class="repo-card__overlay">
+        {% if repo.fork %}
+        <span class="repo-badge">Fork</span>
+        {% endif %}
+        <h3><a href="{{repo.html_url}}" target="_blank">{{repo.name}}</a></h3>
       </div>
     </div>
-  </div>
+    <div class="repo-card__body">
+      <p>{{repo.description | default: "No description provided."}}</p>
+      <ul class="repo-meta">
+        <li><i class="material-icons">star</i><span>{{repo.stargazers_count}} stars</span></li>
+        <li><i class="material-icons">call_split</i><span>{{repo.forks_count}} forks</span></li>
+        <li><i class="material-icons">access_time</i><time datetime="{{repo.updated_at}}">{{repo.updated_at | date: '%Y-%m-%d'}}</time></li>
+      </ul>
+      <a class="repo-link" href="{{repo.html_url}}" target="_blank">View on GitHub</a>
+    </div>
+  </article>
 </div>
 {% endfor %}

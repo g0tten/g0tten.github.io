@@ -1,32 +1,24 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-
 # Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: Gotten project website
-description: > # this means to ignore newlines until "baseurl:"
-  Material theme based on <a href="http://materializecss.com">Materialize.css</a> for jekyll sites
-baseurl: "/"
+title: Gotten
+tagline: Generic MDE framework fOr meTamorphic TEstiNg
+description: >
+  A model-driven environment for defining metamorphic relations, executing experiments,
+  and generating follow-up test cases across application domains.
+baseurl: ""
 url: "https://g0tten.github.io"
 permalink: /:year/:month/:day/:title
 repository: g0tten/gotten
 paginate: 5
 
-# MatJek specific configurations
+# Project links
 github_profile: "https://github.com/g0tten"
 user: "Gotten project"
 user_email: "pablo.gomeza@uam.es"
 contact_url: "https://gomezabajo.github.io"
+update_site_url: "https://g0tten.github.io/gotten/update-site"
+standalone_url: "https://www.dropbox.com/scl/fi/4wkuc4rnwqs05flblfgwf/eclipse.zip?rlkey=lj35uvbgu4a2zbs6xbkm2pg4q&dl=0"
+
+# Analytics / comments
 google_tracking_id: "G-JKMPYJFGYJ"
 google_site_verification: ""
 disqus_shortname: "gomezabajo"

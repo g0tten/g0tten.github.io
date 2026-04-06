@@ -1,19 +1,44 @@
     </main>
-    <footer class="page-footer teal">
+    <footer class="page-footer">
       <div class="container">
-        <div class="row">
-          <div class="col s12">
-            <img src="{{site.baseurl}}/assets/res/logo.png" alt="logo"/>
-            <p class="grey-text text-lighten-4">{{site.description}}</p>
+        <div class="row footer-grid">
+          <div class="col s12 m5">
+            <a class="footer-brand" href="{{site.baseurl}}/">
+              <img src="{{site.baseurl}}/assets/res/white.png" alt="Gotten logo">
+            </a>
+            <p class="footer-copy">{{site.description}}</p>
+          </div>
+
+          <div class="col s12 m3">
+            <h3 class="footer-title">Explore</h3>
+            <ul class="footer-links">
+              <li><a href="{{site.baseurl}}/">Home</a></li>
+              <li><a href="{{site.baseurl}}/home.html">Overview</a></li>
+              <li><a href="{{site.baseurl}}/projects.html">Projects</a></li>
+              <li><a href="{{site.baseurl}}/about.html">About</a></li>
+            </ul>
+          </div>
+
+          <div class="col s12 m4">
+            <h3 class="footer-title">Resources</h3>
+            <ul class="footer-links">
+              <li><a href="{{site.update_site_url}}">Eclipse update site</a></li>
+              <li><a href="{{site.standalone_url}}" target="_blank">Standalone Eclipse+Gotten</a></li>
+              <li><a href="{{site.github_profile}}" target="_blank">GitHub organisation</a></li>
+              <li><a href="mailto:{{site.user_email}}">{{site.user_email}}</a></li>
+            </ul>
           </div>
         </div>
       </div>
+
       <div class="footer-copyright">
         <div class="container">
-          &#xA9; {{"now" | date: "%Y"}} {{site.title}}. All rights reserved. Powered by <a href="https://github.com/gomezabajo">Pablo Gómez-Abajo <a href="mailto:Pablo.GomezA@uam.es">Pablo.GomezA@uam.es</a>.
+          © {{"now" | date: "%Y"}} {{site.title}}. Maintained by
+          <a href="https://github.com/gomezabajo" target="_blank">Pablo Gómez-Abajo</a>.
         </div>
       </div>
     </footer>
+
     <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
     {% for js in layout.js %}

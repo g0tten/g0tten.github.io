@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#1c1836">
     <title>
       {% if page.title %}
-      {{ page.title | escape }}
+      {{ page.title | escape }} · {{ site.title | escape }}
       {% else %}
       {{ site.title | escape }}
       {% endif %}
@@ -34,38 +35,43 @@
     <link rel="sitemap" type="application/xml" title="Sitemap" href="{{site.baseurl}}/sitemap.xml">
     {% seo title=false %}
   </head>
-  <body>
+  <body class="{% if page.title %}page-{{ page.title | slugify }}{% else %}page-home{% endif %}">
     <header>
-      <nav class="top-nav teal">
+      <nav class="top-nav">
         <div class="nav-wrapper">
           <div class="container">
             <a class="page-title" href="{{site.baseurl}}/">{{site.title}}</a>
+            <a href="#" data-activates="slide-out" class="button-collapse top-nav full hide-on-large-only" aria-label="Open navigation">
+              <i class="material-icons">menu</i>
+            </a>
           </div>
         </div>
       </nav>
-      <div class="container">
-        <a href="#" data-activates="slide-out" class="button-collapse top-nav full hide-on-large-only">
-          <i class="material-icons">menu</i>
-        </a>
-      </div>
-      <ul id="slide-out" class="side-nav fixed">
-        <li>
-          <div class="userView">
-            <div class="background"></div>
-            <a href="{{site.github_profile}}" target="_blank"><img class="circle z-depth-2" src="{{site.baseurl}}/assets/res/user.png"></a>
-            <span class="white-text name">{{site.user}}</span>
-            <span class="white-text email">{{site.user_email}}</span>
+
+      <ul id="slide-out" class="side-nav fixed app-sidenav">
+        <li class="brand-panel">
+          <a class="brand-lockup" href="{{site.baseurl}}/">
+            <img src="{{site.baseurl}}/assets/res/white.png" alt="Gotten logo">
+          </a>
+          <p class="brand-summary">{{site.description}}</p>
+          <div class="brand-actions">
+            <a class="btn waves-effect waves-light" href="{{site.update_site_url}}">Update site</a>
+            <a class="btn-flat waves-effect" href="{{site.github_profile}}" target="_blank">GitHub</a>
           </div>
         </li>
-        <li><a class="waves-effect" href="{{site.baseurl}}/home.html"><i class="material-icons-extended">home</i>Home</a></li>
-        <li><a class="waves-effect" href="https://github.com/g0tten"><i class="material-icons-extended">archive</i>GitHub</a></li>
-        <li><a class="waves-effect" href="{{site.baseurl}}/gotten/update-site"><i class="material-icons-extended">download</i>Update-site</a></li>
-        <li><a class="waves-effect" href="https://www.dropbox.com/scl/fi/4wkuc4rnwqs05flblfgwf/eclipse.zip?rlkey=lj35uvbgu4a2zbs6xbkm2pg4q&dl=0"><i class="material-icons-extended">settings</i>Standalone Eclipse+Gotten</a></li>
-        <li><a class="waves-effect" href="{{site.baseurl}}/evaluation.html"><i class="material-icons-extended">cloud</i>Gotten for Cloud</a></li>
-        <li><a class="waves-effect" href="{{site.baseurl}}/video.html"><i class="material-icons-extended">tv</i>Gotten for Video Streaming</a></li>
-        <li><div class="divider"></div></li>
-        <li><a class="waves-effect" href="{{site.baseurl}}/"><i class="material-icons-extended">people alt</i>About</a></li>
-        <li><a class="waves-effect" href="{{site.baseurl}}/"><i class="material-icons-extended">email</i>Contact</a></li>
+
+        <li class="nav-section-label">Explore</li>
+        <li><a class="waves-effect nav-link" href="{{site.baseurl}}/"><i class="material-icons-extended">home</i>Home</a></li>
+        <li><a class="waves-effect nav-link" href="{{site.baseurl}}/home.html"><i class="material-icons-extended">description</i>Overview</a></li>
+        <li><a class="waves-effect nav-link" href="{{site.baseurl}}/projects.html"><i class="material-icons-extended">archive</i>Projects</a></li>
+        <li><a class="waves-effect nav-link" href="{{site.baseurl}}/evaluation.html"><i class="material-icons-extended">cloud</i>Cloud example</a></li>
+        <li><a class="waves-effect nav-link" href="{{site.baseurl}}/video.html"><i class="material-icons-extended">tv</i>Video example</a></li>
+        <li><a class="waves-effect nav-link" href="{{site.baseurl}}/about.html"><i class="material-icons-extended">people alt</i>About</a></li>
+        <li><a class="waves-effect nav-link" href="{{site.baseurl}}/contact.html"><i class="material-icons-extended">email</i>Contact</a></li>
+
+        <li class="nav-section-label">Downloads</li>
+        <li><a class="waves-effect" href="{{site.update_site_url}}"><i class="material-icons-extended">download</i>Eclipse update site</a></li>
+        <li><a class="waves-effect" href="{{site.standalone_url}}" target="_blank"><i class="material-icons-extended">settings</i>Standalone Eclipse+Gotten</a></li>
       </ul>
     </header>
     <main>

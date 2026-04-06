@@ -1,87 +1,467 @@
 ---
 ---
-// Overall
+:root
+  --bg: #0c1020
+  --bg-accent: #141b33
+  --surface: rgba(17, 24, 39, 0.78)
+  --surface-strong: #141b2d
+  --surface-soft: rgba(255, 255, 255, 0.06)
+  --border: rgba(255, 255, 255, 0.08)
+  --text: #e7ebf6
+  --muted: #a6b0cf
+  --brand: #6c63ff
+  --brand-strong: #5146ff
+  --accent: #ffb347
+  --success: #52d1a4
+  --shadow: 0 24px 48px rgba(0, 0, 0, 0.28)
+  --radius: 22px
+
 body
   display: flex
   min-height: 100vh
   flex-direction: column
+  background: radial-gradient(circle at top right, rgba(108, 99, 255, 0.18), transparent 28%), linear-gradient(180deg, var(--bg) 0%, #0b1020 100%)
+  color: var(--text)
+  font-family: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif
 
 a
-  color: #bdbdbd
+  color: #cdd5ff
+  transition: color .2s ease, opacity .2s ease, transform .2s ease
 
-a:hover
-  text-decoration: underline
+a:hover,
+a:focus
+  color: #ffffff
+  text-decoration: none
 
-a:active
-  text-decoration: underline
+p
+  color: var(--muted)
+  line-height: 1.75
+
+strong
+  color: #ffffff
 
 main
   flex: 1 0 auto
+  padding-left: 320px
+  padding-top: 32px
+  padding-bottom: 24px
 
 header,
-main,
 footer
-  padding-left: 300px
+  padding-left: 320px
 
 .container
-  width: 90%
+  width: min(1120px, 92%)
 
-// Header
-header
-  height: 80px
+.app-shell
+  min-height: calc(100vh - 220px)
 
-  a:hover
-    text-decoration: none
+.top-nav
+  background: transparent
+  box-shadow: none
+  height: 72px
+  line-height: 72px
 
-  .background
-    background: -webkit-linear-gradient(90deg, #3AA17E 10%, #00537E 90%)
-    background: linear-gradient(90deg, #3AA17E 10%, #00537E 90%)
+.top-nav .nav-wrapper
+  background: transparent
 
-a
-  &.button-collapse
-    &.top-nav
-      position: absolute
-      text-align: center
-      height: 48px
-      width: 48px
-      top: 0
-      float: none
-      color: #fff
-      font-size: 36px
-      z-index: 999
-      line-height: 80px
+.page-title
+  font-size: 1.1rem
+  font-weight: 700
+  letter-spacing: .04em
+  text-transform: uppercase
+  color: rgba(255, 255, 255, 0.86)
 
-nav 
-  .page-title
-    font-size: 36px
-    font-weight: bold
-    line-height: 80px
+.button-collapse.top-nav
+  position: absolute
+  right: 16px
+  top: 8px
+  color: #fff
+  font-size: 2rem
+  line-height: 1
 
-nav
-  &.top-nav
-    height: 80px
+.app-sidenav
+  width: 320px
+  background: linear-gradient(180deg, rgba(18, 24, 48, 0.98) 0%, rgba(12, 16, 32, 0.98) 100%)
+  border-right: 1px solid var(--border)
+  box-shadow: none
+  overflow-y: auto
 
-// Footer
+.app-sidenav li > a
+  color: rgba(231, 235, 246, 0.86)
+  font-weight: 500
+  border-radius: 14px
+  margin: 0 16px 6px
+  transition: background-color .2s ease, color .2s ease, transform .2s ease
+
+.app-sidenav li > a:hover
+  background: rgba(255, 255, 255, 0.06)
+  transform: translateX(2px)
+
+.app-sidenav li > a i
+  color: inherit
+
+.app-sidenav .nav-link.is-active
+  background: linear-gradient(90deg, rgba(108, 99, 255, 0.24), rgba(255, 179, 71, 0.16))
+  color: #ffffff
+
+.brand-panel
+  padding: 28px 22px 18px
+  margin-bottom: 12px
+
+.brand-lockup
+  display: block
+  margin-bottom: 16px
+
+.brand-lockup img
+  max-width: 190px
+  width: 100%
+  height: auto
+
+.brand-summary
+  margin: 0 0 18px
+  color: rgba(231, 235, 246, 0.72)
+  font-size: .98rem
+
+.brand-actions
+  display: flex
+  gap: 10px
+  flex-wrap: wrap
+
+.brand-actions .btn
+  background: linear-gradient(90deg, var(--brand), var(--brand-strong))
+  border-radius: 999px
+  box-shadow: none
+  text-transform: none
+  font-weight: 600
+
+.brand-actions .btn-flat
+  color: #ffffff
+  border-radius: 999px
+  background: rgba(255, 255, 255, 0.08)
+
+.nav-section-label
+  color: rgba(166, 176, 207, 0.7)
+  font-size: .76rem
+  font-weight: 700
+  letter-spacing: .12em
+  text-transform: uppercase
+  margin: 18px 28px 8px
+
+.eyebrow
+  display: inline-flex
+  align-items: center
+  gap: 8px
+  color: var(--accent)
+  font-size: .78rem
+  font-weight: 700
+  letter-spacing: .14em
+  text-transform: uppercase
+
+.eyebrow::before
+  content: ""
+  width: 28px
+  height: 1px
+  background: currentColor
+  opacity: .65
+
+.section-heading
+  margin-bottom: 20px
+
+.section-heading h2,
+.page-hero h1,
+.hero-panel h1
+  margin: 10px 0 0
+  color: #ffffff
+  font-weight: 800
+  line-height: 1.15
+
+.section-heading h2
+  font-size: clamp(1.8rem, 3.2vw, 2.5rem)
+
+.section-block
+  margin-top: 28px
+  padding: 30px
+  border-radius: var(--radius)
+  background: var(--surface)
+  border: 1px solid var(--border)
+  box-shadow: var(--shadow)
+  backdrop-filter: blur(12px)
+
+.section-block--accent
+  background: linear-gradient(135deg, rgba(108, 99, 255, 0.12), rgba(255, 179, 71, 0.08))
+
+.content-surface
+  padding: 28px
+  border-radius: var(--radius)
+  background: var(--surface)
+  border: 1px solid var(--border)
+  box-shadow: var(--shadow)
+  backdrop-filter: blur(12px)
+
+.page-hero
+  margin-bottom: 18px
+  padding: 16px 4px
+
+.page-hero h1
+  font-size: clamp(2rem, 3.6vw, 3rem)
+
+.page-content
+  margin-bottom: 0
+
+.info-card,
+.callout-card,
+.contact-card,
+.metric-card
+  background: rgba(255, 255, 255, 0.04)
+  border: 1px solid var(--border)
+  border-radius: 20px
+  padding: 22px
+  height: 100%
+
+.info-card h3,
+.callout-card h3,
+.contact-card h3,
+.metric-card strong
+  color: #ffffff
+  font-weight: 700
+
+.info-card p:last-child,
+.callout-card p:last-child,
+.contact-card p:last-child
+  margin-bottom: 0
+
+.clean-list
+  margin: 0
+  padding-left: 20px
+
+.clean-list li
+  color: var(--muted)
+  margin-bottom: 10px
+
+.callout-grid,
+.feature-grid,
+.domain-grid,
+.resource-grid
+  display: grid
+  grid-template-columns: repeat(2, minmax(0, 1fr))
+  gap: 18px
+
+.feature-grid,
+.domain-grid,
+.resource-grid
+  grid-template-columns: repeat(3, minmax(0, 1fr))
+
+.hero-panel
+  display: grid
+  grid-template-columns: minmax(0, 1.45fr) minmax(320px, .95fr)
+  gap: 24px
+  padding: 34px
+  border-radius: 28px
+  background: linear-gradient(135deg, rgba(14, 20, 42, 0.92), rgba(18, 26, 52, 0.82))
+  border: 1px solid rgba(255, 255, 255, 0.08)
+  box-shadow: var(--shadow)
+  overflow: hidden
+  position: relative
+
+.hero-panel::after
+  content: ""
+  position: absolute
+  inset: auto -120px -120px auto
+  width: 320px
+  height: 320px
+  background: radial-gradient(circle, rgba(255, 179, 71, 0.22), transparent 68%)
+  pointer-events: none
+
+.hero-panel__copy
+  position: relative
+  z-index: 1
+
+.hero-panel__copy h1
+  font-size: clamp(2.2rem, 4vw, 4rem)
+
+.hero-lead
+  font-size: 1.05rem
+  max-width: 42rem
+  margin: 18px 0 0
+
+.hero-actions
+  margin-top: 26px
+  display: flex
+  gap: 12px
+  flex-wrap: wrap
+
+.hero-actions .btn,
+.btn.btn-ghost
+  border-radius: 999px
+  box-shadow: none
+  text-transform: none
+  font-weight: 700
+  letter-spacing: .01em
+
+.hero-actions .btn
+  background: linear-gradient(90deg, var(--brand), var(--brand-strong))
+
+.btn.btn-ghost
+  background: rgba(255, 255, 255, 0.06)
+  border: 1px solid rgba(255, 255, 255, 0.12)
+  color: #ffffff
+
+.hero-panel__aside
+  display: grid
+  gap: 14px
+  align-content: start
+
+.metric-card
+  background: rgba(255, 255, 255, 0.05)
+
+.metric-card__label
+  display: block
+  color: var(--accent)
+  font-size: .8rem
+  font-weight: 700
+  letter-spacing: .08em
+  text-transform: uppercase
+  margin-bottom: 8px
+
+.metric-card strong
+  display: block
+  font-size: 1.2rem
+  margin-bottom: 8px
+
+.metric-card p
+  margin: 0
+
+.domain-card__tag
+  display: inline-block
+  margin-bottom: 14px
+  padding: 6px 10px
+  border-radius: 999px
+  background: rgba(108, 99, 255, 0.18)
+  color: #d9dcff
+  font-size: .8rem
+  font-weight: 700
+
+.section-banner
+  margin-bottom: 16px
+
+.section-banner h2
+  margin: 10px 0 8px
+  color: #ffffff
+  font-size: clamp(1.6rem, 3vw, 2.2rem)
+
+.footer-grid
+  margin-bottom: 0
+
 footer.page-footer
-  margin-top: 10px
+  background: transparent
+  margin-top: 24px
+  padding-top: 0
 
-  .row
-    margin-bottom: 0px
+footer.page-footer > .container
+  padding: 0 0 16px
 
-  p
-    margin-top: 5px
+.footer-brand img
+  max-width: 180px
+  width: 100%
+  height: auto
 
-// Misc
+.footer-title
+  color: #ffffff
+  font-size: 1rem
+  font-weight: 700
+  margin: 0 0 14px
+
+.footer-copy
+  max-width: 32rem
+  margin-top: 14px
+
+.footer-links
+  list-style: none
+  margin: 0
+  padding: 0
+
+.footer-links li
+  margin-bottom: 10px
+
+.footer-links a
+  color: var(--muted)
+
+.footer-links a:hover
+  color: #ffffff
+
+.footer-copyright
+  background: rgba(8, 11, 22, 0.52)
+  border-top: 1px solid var(--border)
+  color: rgba(255, 255, 255, 0.72)
+
+.footer-copyright .container
+  padding: 16px 0
+
+main h2,
+main h3,
+main h4
+  color: #ffffff
+
+main h2
+  margin-top: 34px
+  font-size: clamp(1.55rem, 2.6vw, 2rem)
+
+main h3
+  margin-top: 26px
+  font-size: clamp(1.2rem, 2vw, 1.45rem)
+
+main img
+  max-width: 100%
+  border-radius: 18px
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.24)
+
+main table
+  width: 100%
+  border-collapse: collapse
+  display: block
+  overflow-x: auto
+  margin: 22px 0
+  border-radius: 16px
+
+main table tr
+  background: rgba(255, 255, 255, 0.02)
+
+main table th,
+main table td
+  border: 1px solid rgba(255, 255, 255, 0.08)
+  padding: 12px 14px
+
+main table th
+  color: #ffffff
+  background: rgba(255, 255, 255, 0.06)
+
 blockquote
-  border-left-color: teal
+  border-left: 3px solid var(--accent)
+  background: rgba(255, 255, 255, 0.03)
+  margin: 22px 0
+  padding: 18px 20px
+  border-radius: 0 16px 16px 0
 
-main
-  ul
-    &:not(.browser-default)
-      padding-left: 40px
+pre,
+code
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace
 
-      li
-        list-style-type: disc
+main ul:not(.browser-default),
+main ol
+  padding-left: 22px
+
+main ul:not(.browser-default) li,
+main ol li
+  margin-bottom: 10px
+
+.chip
+  background: rgba(255, 255, 255, 0.08)
+  color: #ffffff
+  border: 1px solid rgba(255, 255, 255, 0.08)
+
+.divider
+  background: rgba(255, 255, 255, 0.08)
 
 @media only screen and (max-width: 992px)
   header,
@@ -89,11 +469,42 @@ main
   footer
     padding-left: 0
 
-  nav 
-    .nav-wrapper
-      text-align: center
+  main
+    padding-top: 18px
+
+  .top-nav
+    background: rgba(12, 16, 32, 0.92)
+
+  .app-sidenav
+    width: 300px
+
+  .page-title
+    display: inline-block
+    padding-left: 8px
+
+  .hero-panel
+    grid-template-columns: 1fr
+
+  .callout-grid,
+  .feature-grid,
+  .domain-grid,
+  .resource-grid
+    grid-template-columns: 1fr
 
 @media only screen and (max-width: 600px)
-  nav
-    .page-title
-      font-size: 20px
+  .container
+    width: calc(100% - 28px)
+
+  .hero-panel,
+  .section-block,
+  .content-surface
+    padding: 22px
+
+  .hero-actions
+    flex-direction: column
+    align-items: stretch
+
+  .hero-actions .btn,
+  .hero-actions .btn.btn-ghost
+    width: 100%
+    text-align: center

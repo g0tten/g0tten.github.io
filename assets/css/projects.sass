@@ -1,57 +1,82 @@
 ---
 ---
-.card-image
-  height: 10em
-  width: 100%
-  overflow-x: hidden
+.filter-switch
+  margin-bottom: 18px
 
-  i
-    color: #fff
-    padding: 10px
+.repo-item
+  margin-bottom: 22px
 
-.card
-  margin-bottom: 20px
-  .card-content
-    height: 7em
-    overflow: hidden
-    font-size: 14px
-    line-height: 110%
+.repo-card
+  background: rgba(255, 255, 255, 0.04)
+  border: 1px solid rgba(255, 255, 255, 0.08)
+  border-radius: 22px
+  overflow: hidden
+  height: 100%
+  display: flex
+  flex-direction: column
 
-    span
-      width: 100%
+.repo-card__visual
+  position: relative
+  min-height: 180px
+  overflow: hidden
 
-  .card-image
-    a.card-title
-      font-weight: bold
-      color: #fff
-      width: 100%
-      height: 100%
-      line-height: 100%
-      justify-content: center
-      z-index: -1
+.repo-card__overlay
+  position: absolute
+  inset: 0
+  padding: 18px
+  background: linear-gradient(180deg, rgba(8, 11, 22, 0.12) 0%, rgba(8, 11, 22, 0.78) 100%)
+  display: flex
+  flex-direction: column
+  justify-content: flex-end
 
-  .card-reveal
-    .card-reveal-content
-      display: block
+.repo-card__overlay h3
+  margin: 0
+  font-size: 1.4rem
 
-      span.card-title
-        font-weight: bold
-        padding-bottom: 19px
+.repo-card__overlay a
+  color: #ffffff
 
-      span.tooltipped
-        display: block
-        padding-top: 5px
-        padding-bottom: 5px
-        font-size: 16px
+.repo-card__body
+  padding: 18px
+  display: flex
+  flex-direction: column
+  gap: 14px
+  flex: 1
 
-        i
-          font-size: 12px
-          margin-right: 10px
+.repo-card__body p
+  margin: 0
 
-.row
-  div
-    &.switch
-      margin-bottom: 5px
+.repo-meta
+  list-style: none
+  padding: 0
+  margin: 0
+  display: grid
+  gap: 10px
+
+.repo-meta li
+  display: flex
+  align-items: center
+  gap: 10px
+  color: var(--muted)
+
+.repo-meta i
+  font-size: 1rem
+  color: var(--accent)
+
+.repo-link
+  margin-top: auto
+  font-weight: 700
+  color: #ffffff
+
+.repo-badge
+  align-self: flex-start
+  margin-bottom: 12px
+  padding: 6px 10px
+  border-radius: 999px
+  background: rgba(255, 179, 71, 0.2)
+  color: #fff1d4
+  font-size: .78rem
+  font-weight: 700
 
 .hidden
-  display: none
+  display: none !important

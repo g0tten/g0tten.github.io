@@ -1,18 +1,27 @@
 ---
 ---
-.icontain
-  position: relative
-  margin-top: 20px
-  padding-bottom: 110%
-  height: 0
-  overflow: hidden
-  max-width: 100%
+.contact-grid
+  display: grid
+  grid-template-columns: repeat(2, minmax(0, 1fr))
+  gap: 18px
 
-.icontain iframe,
-.icontain object,
-.icontain embed
-  position: absolute
-  top: 0
-  left: 0
-  width: 100%
-  height: 100%
+.contact-card--wide
+  grid-column: span 2
+
+.contact-card h2
+  margin: 10px 0 12px
+  color: #ffffff
+  font-size: clamp(1.7rem, 2.8vw, 2.35rem)
+
+.contact-card a
+  display: inline-flex
+  margin-right: 14px
+  margin-top: 10px
+  color: #ffffff
+
+@media only screen and (max-width: 768px)
+  .contact-grid
+    grid-template-columns: 1fr
+
+  .contact-card--wide
+    grid-column: span 1
