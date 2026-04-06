@@ -4,7 +4,7 @@
   padding-top: 20px
 
 #post-info
-  margin-bottom: 16px
+  margin-bottom: 18px
 
 #post-info ul:not(.browser-default)
   padding-left: 0
@@ -14,16 +14,19 @@
   list-style: none
 
 #post-info .collapsible
-  border: 1px solid rgba(255, 255, 255, 0.08)
+  border: 1px solid var(--border)
   box-shadow: none
   border-radius: 18px
   overflow: hidden
 
 #post-info .collapsible-header,
 #post-info .collapsible-body
-  background: rgba(255, 255, 255, 0.03)
+  background: #ffffff
   border-bottom: 0
   color: var(--text)
+
+#post-info .collapsible-body
+  border-top: 1px solid var(--border)
 
 #post-info .collapsible-header span,
 #post-info .collapsible-body span
@@ -36,6 +39,7 @@
 #post-info i
   font-size: 1rem
   margin-right: 10px
+  color: var(--accent)
 
 #post-info #indicate
   font-size: 1.2rem
@@ -48,6 +52,3 @@ main figure.highlight pre,
 main div.highlighter-rouge pre
   white-space: pre-wrap
   border-radius: 18px
-
-main figure.highlight table
-  width: 100%

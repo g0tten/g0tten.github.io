@@ -1,37 +1,44 @@
 ---
 ---
 .filter-switch
-  margin-bottom: 18px
+  margin-bottom: 20px
+  padding: 18px 20px
+  background: #ffffff
+  border: 1px solid var(--border)
+  border-radius: 16px
+  box-shadow: var(--shadow-sm)
 
 .repo-item
   margin-bottom: 22px
 
 .repo-card
-  background: rgba(255, 255, 255, 0.04)
-  border: 1px solid rgba(255, 255, 255, 0.08)
-  border-radius: 22px
+  background: #ffffff
+  border: 1px solid var(--border)
+  border-radius: 20px
   overflow: hidden
   height: 100%
   display: flex
   flex-direction: column
+  box-shadow: var(--shadow-sm)
 
 .repo-card__visual
   position: relative
-  min-height: 180px
+  min-height: 160px
   overflow: hidden
+  border-bottom: 1px solid var(--border)
 
 .repo-card__overlay
   position: absolute
   inset: 0
   padding: 18px
-  background: linear-gradient(180deg, rgba(8, 11, 22, 0.12) 0%, rgba(8, 11, 22, 0.78) 100%)
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(23, 34, 53, 0.72) 100%)
   display: flex
   flex-direction: column
   justify-content: flex-end
 
 .repo-card__overlay h3
   margin: 0
-  font-size: 1.4rem
+  font-size: 1.35rem
 
 .repo-card__overlay a
   color: #ffffff
@@ -66,17 +73,14 @@
 .repo-link
   margin-top: auto
   font-weight: 700
-  color: #ffffff
+  color: var(--brand)
 
 .repo-badge
   align-self: flex-start
   margin-bottom: 12px
   padding: 6px 10px
   border-radius: 999px
-  background: rgba(255, 179, 71, 0.2)
-  color: #fff1d4
+  background: rgba(210, 138, 31, 0.18)
+  color: #8a5a12
   font-size: .78rem
   font-weight: 700
-
-.hidden
-  display: none !important

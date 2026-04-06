@@ -1,60 +1,94 @@
 ---
 ---
 \:root
-  --bg: #0c1020
-  --bg-accent: #141b33
-  --surface: rgba(17, 24, 39, 0.78)
-  --surface-strong: #141b2d
-  --surface-soft: rgba(255, 255, 255, 0.06)
-  --border: rgba(255, 255, 255, 0.08)
-  --text: #e7ebf6
-  --muted: #a6b0cf
-  --brand: #6c63ff
-  --brand-strong: #5146ff
-  --accent: #ffb347
-  --success: #52d1a4
-  --shadow: 0 24px 48px rgba(0, 0, 0, 0.28)
-  --radius: 22px
+  --bg: #f5f7fb
+  --bg-soft: #eef2f8
+  --bg-accent: #e9eef8
+  --surface: #ffffff
+  --surface-alt: #f8fafd
+  --surface-strong: #eef3fb
+  --border: #d9e1ee
+  --border-strong: #c6d2e4
+  --text: #23324a
+  --text-strong: #172235
+  --muted: #58657c
+  --muted-soft: #73819a
+  --brand: #3d3a8f
+  --brand-strong: #2f2c77
+  --accent: #d28a1f
+  --accent-soft: #f6ead2
+  --success: #1f7a62
+  --shadow-sm: 0 10px 24px rgba(29, 43, 72, 0.06)
+  --shadow-md: 0 18px 44px rgba(29, 43, 72, 0.09)
+  --radius: 20px
+  --radius-sm: 14px
+
+html
+  scroll-behavior: smooth
 
 body
   display: flex
   min-height: 100vh
   flex-direction: column
-  background: radial-gradient(circle at top right, rgba(108, 99, 255, 0.18), transparent 28%), linear-gradient(180deg, var(--bg) 0%, #0b1020 100%)
+  background: linear-gradient(180deg, #f7f9fc 0%, #f2f5fa 100%)
   color: var(--text)
   font-family: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif
+  -webkit-font-smoothing: antialiased
+  text-rendering: optimizeLegibility
+
+.section-heading h2,
+.page-hero h1,
+.hero-panel h1,
+main h1,
+main h2,
+main h3
+  font-family: Georgia, "Times New Roman", serif
+  letter-spacing: -.01em
+
+body::before
+  content: ""
+  position: fixed
+  inset: 0
+  background: radial-gradient(circle at top right, rgba(61, 58, 143, 0.08), transparent 28%), radial-gradient(circle at left center, rgba(210, 138, 31, 0.06), transparent 24%)
+  pointer-events: none
+  z-index: -1
 
 a
-  color: #cdd5ff
-  transition: color .2s ease, opacity .2s ease, transform .2s ease
+  color: var(--brand)
+  transition: color .2s ease, opacity .2s ease, transform .2s ease, box-shadow .2s ease, background-color .2s ease
+
 
 a:hover,
 a:focus
-  color: #ffffff
+  color: var(--brand-strong)
   text-decoration: none
 
 p
   color: var(--muted)
-  line-height: 1.75
+  line-height: 1.78
+  margin: 0 0 1.1rem
 
 strong
-  color: #ffffff
+  color: var(--text-strong)
+
+small
+  color: var(--muted-soft)
 
 main
   flex: 1 0 auto
   padding-left: 320px
-  padding-top: 32px
-  padding-bottom: 24px
+  padding-top: 28px
+  padding-bottom: 32px
 
 header,
 footer
   padding-left: 320px
 
 .container
-  width: min(1120px, 92%)
+  width: min(1140px, 92%)
 
 .app-shell
-  min-height: calc(100vh - 220px)
+  min-height: calc(100vh - 200px)
 
 .top-nav
   background: transparent
@@ -66,52 +100,60 @@ footer
   background: transparent
 
 .page-title
-  font-size: 1.1rem
+  font-size: .94rem
   font-weight: 700
-  letter-spacing: .04em
+  letter-spacing: .12em
   text-transform: uppercase
-  color: rgba(255, 255, 255, 0.86)
+  color: var(--text-strong)
 
 .button-collapse.top-nav
   position: absolute
   right: 16px
   top: 8px
-  color: #fff
+  color: var(--text-strong)
   font-size: 2rem
   line-height: 1
 
 .app-sidenav
   width: 320px
-  background: linear-gradient(180deg, rgba(18, 24, 48, 0.98) 0%, rgba(12, 16, 32, 0.98) 100%)
+  background: linear-gradient(180deg, #fbfcff 0%, #f4f7fb 100%)
   border-right: 1px solid var(--border)
   box-shadow: none
   overflow-y: auto
 
 .app-sidenav li > a
-  color: rgba(231, 235, 246, 0.86)
+  color: var(--text)
   font-weight: 500
-  border-radius: 14px
+  border-radius: 12px
   margin: 0 16px 6px
-  transition: background-color .2s ease, color .2s ease, transform .2s ease
+  transition: background-color .2s ease, color .2s ease, transform .2s ease, border-color .2s ease
 
-.app-sidenav li > a:hover
-  background: rgba(255, 255, 255, 0.06)
+.app-sidenav li > a:hover,
+.app-sidenav li > a:focus
+  background: var(--surface-strong)
+  color: var(--text-strong)
   transform: translateX(2px)
 
 .app-sidenav li > a i
   color: inherit
 
 .app-sidenav .nav-link.is-active
-  background: linear-gradient(90deg, rgba(108, 99, 255, 0.24), rgba(255, 179, 71, 0.16))
-  color: #ffffff
+  background: linear-gradient(90deg, rgba(61, 58, 143, 0.12), rgba(210, 138, 31, 0.12))
+  color: var(--brand-strong)
+  font-weight: 700
 
 .brand-panel
-  padding: 28px 22px 18px
+  padding: 30px 22px 20px
   margin-bottom: 12px
 
 .brand-lockup
-  display: block
-  margin-bottom: 16px
+  display: inline-flex
+  padding: 12px 16px
+  background: #ffffff
+  border: 1px solid var(--border)
+  border-radius: 16px
+  box-shadow: var(--shadow-sm)
+  margin-bottom: 18px
 
 .brand-lockup img
   max-width: 190px
@@ -120,7 +162,7 @@ footer
 
 .brand-summary
   margin: 0 0 18px
-  color: rgba(231, 235, 246, 0.72)
+  color: var(--muted)
   font-size: .98rem
 
 .brand-actions
@@ -128,83 +170,96 @@ footer
   gap: 10px
   flex-wrap: wrap
 
-.brand-actions .btn
-  background: linear-gradient(90deg, var(--brand), var(--brand-strong))
+.brand-actions .btn,
+.hero-actions .btn
+  background: var(--brand)
   border-radius: 999px
   box-shadow: none
   text-transform: none
-  font-weight: 600
+  font-weight: 700
+  letter-spacing: .01em
 
-.brand-actions .btn-flat
-  color: #ffffff
+.brand-actions .btn:hover,
+.hero-actions .btn:hover
+  background: var(--brand-strong)
+
+.brand-actions .btn-flat,
+.btn.btn-ghost
+  color: var(--brand)
   border-radius: 999px
-  background: rgba(255, 255, 255, 0.08)
+  background: rgba(61, 58, 143, 0.06)
+  border: 1px solid rgba(61, 58, 143, 0.14)
+  text-transform: none
+  font-weight: 700
+
+.brand-actions .btn-flat:hover,
+.btn.btn-ghost:hover
+  background: rgba(61, 58, 143, 0.1)
+  color: var(--brand-strong)
 
 .nav-section-label
-  color: rgba(166, 176, 207, 0.7)
+  color: var(--muted-soft)
   font-size: .76rem
   font-weight: 700
-  letter-spacing: .12em
+  letter-spacing: .14em
   text-transform: uppercase
   margin: 18px 28px 8px
 
 .eyebrow
   display: inline-flex
   align-items: center
-  gap: 8px
+  gap: 10px
   color: var(--accent)
-  font-size: .78rem
+  font-size: .76rem
   font-weight: 700
-  letter-spacing: .14em
+  letter-spacing: .16em
   text-transform: uppercase
 
 .eyebrow::before
   content: ""
-  width: 28px
+  width: 32px
   height: 1px
   background: currentColor
-  opacity: .65
+  opacity: .7
 
 .section-heading
-  margin-bottom: 20px
+  margin-bottom: 22px
 
 .section-heading h2,
 .page-hero h1,
 .hero-panel h1
-  margin: 10px 0 0
-  color: #ffffff
+  margin: 12px 0 0
+  color: var(--text-strong)
   font-weight: 800
-  line-height: 1.15
+  line-height: 1.14
 
 .section-heading h2
-  font-size: clamp(1.8rem, 3.2vw, 2.5rem)
+  font-size: clamp(1.85rem, 3vw, 2.45rem)
 
 .section-block
   margin-top: 28px
-  padding: 30px
-  border-radius: var(--radius)
+  padding: 34px
+  border-radius: 24px
   background: var(--surface)
   border: 1px solid var(--border)
-  box-shadow: var(--shadow)
-  backdrop-filter: blur(12px)
+  box-shadow: var(--shadow-md)
 
 .section-block--accent
-  background: linear-gradient(135deg, rgba(108, 99, 255, 0.12), rgba(255, 179, 71, 0.08))
+  background: linear-gradient(180deg, #fbfcff 0%, #f7f9fd 100%)
 
 .content-surface
-  padding: 28px
-  border-radius: var(--radius)
+  padding: 34px
+  border-radius: 24px
   background: var(--surface)
   border: 1px solid var(--border)
-  box-shadow: var(--shadow)
-  backdrop-filter: blur(12px)
+  box-shadow: var(--shadow-md)
 
 .page-hero
-  margin-bottom: 18px
-  padding: 16px 4px
+  margin-bottom: 16px
+  padding: 8px 4px 12px
 
 .page-hero h1
-  font-size: clamp(2rem, 3.6vw, 3rem)
+  font-size: clamp(2rem, 3.5vw, 3rem)
 
 .page-content
   margin-bottom: 0
@@ -213,17 +268,18 @@ footer
 .callout-card,
 .contact-card,
 .metric-card
-  background: rgba(255, 255, 255, 0.04)
+  background: linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%)
   border: 1px solid var(--border)
-  border-radius: 20px
-  padding: 22px
+  border-radius: 18px
+  padding: 24px
   height: 100%
+  box-shadow: 0 10px 22px rgba(29, 43, 72, 0.04)
 
 .info-card h3,
 .callout-card h3,
 .contact-card h3,
 .metric-card strong
-  color: #ffffff
+  color: var(--text-strong)
   font-weight: 700
 
 .info-card p:last-child,
@@ -245,7 +301,7 @@ footer
 .resource-grid
   display: grid
   grid-template-columns: repeat(2, minmax(0, 1fr))
-  gap: 18px
+  gap: 20px
 
 .feature-grid,
 .domain-grid,
@@ -255,57 +311,61 @@ footer
 .hero-panel
   display: grid
   grid-template-columns: minmax(0, 1.45fr) minmax(320px, .95fr)
-  gap: 24px
-  padding: 34px
+  gap: 26px
+  padding: 38px
   border-radius: 28px
-  background: linear-gradient(135deg, rgba(14, 20, 42, 0.92), rgba(18, 26, 52, 0.82))
-  border: 1px solid rgba(255, 255, 255, 0.08)
-  box-shadow: var(--shadow)
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%)
+  border: 1px solid var(--border)
+  box-shadow: var(--shadow-md)
   overflow: hidden
   position: relative
+
+.hero-panel::before
+  content: ""
+  position: absolute
+  inset: 0 auto auto 0
+  width: 100%
+  height: 6px
+  background: linear-gradient(90deg, var(--brand), var(--accent))
 
 .hero-panel::after
   content: ""
   position: absolute
-  inset: auto -120px -120px auto
-  width: 320px
-  height: 320px
-  background: radial-gradient(circle, rgba(255, 179, 71, 0.22), transparent 68%)
+  right: -90px
+  bottom: -90px
+  width: 260px
+  height: 260px
+  border-radius: 50%
+  background: radial-gradient(circle, rgba(61, 58, 143, 0.08), transparent 70%)
   pointer-events: none
 
-.hero-panel__copy
+.hero-panel__copy,
+.hero-panel__aside
   position: relative
   z-index: 1
 
 .hero-panel__copy h1
-  font-size: clamp(2.2rem, 4vw, 4rem)
+  font-size: clamp(2.4rem, 4vw, 4.1rem)
 
 .hero-lead
-  font-size: 1.05rem
-  max-width: 42rem
+  font-size: 1.08rem
+  max-width: 44rem
   margin: 18px 0 0
+  color: var(--muted)
 
 .hero-actions
-  margin-top: 26px
+  margin-top: 28px
   display: flex
   gap: 12px
   flex-wrap: wrap
 
 .hero-actions .btn,
 .btn.btn-ghost
-  border-radius: 999px
-  box-shadow: none
-  text-transform: none
-  font-weight: 700
-  letter-spacing: .01em
-
-.hero-actions .btn
-  background: linear-gradient(90deg, var(--brand), var(--brand-strong))
-
-.btn.btn-ghost
-  background: rgba(255, 255, 255, 0.06)
-  border: 1px solid rgba(255, 255, 255, 0.12)
-  color: #ffffff
+  min-height: 44px
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  padding: 0 22px
 
 .hero-panel__aside
   display: grid
@@ -313,21 +373,22 @@ footer
   align-content: start
 
 .metric-card
-  background: rgba(255, 255, 255, 0.05)
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%)
 
 .metric-card__label
   display: block
   color: var(--accent)
-  font-size: .8rem
+  font-size: .78rem
   font-weight: 700
-  letter-spacing: .08em
+  letter-spacing: .12em
   text-transform: uppercase
-  margin-bottom: 8px
+  margin-bottom: 10px
 
 .metric-card strong
   display: block
-  font-size: 1.2rem
-  margin-bottom: 8px
+  font-size: 1.14rem
+  line-height: 1.45
+  margin-bottom: 10px
 
 .metric-card p
   margin: 0
@@ -337,17 +398,18 @@ footer
   margin-bottom: 14px
   padding: 6px 10px
   border-radius: 999px
-  background: rgba(108, 99, 255, 0.18)
-  color: #d9dcff
-  font-size: .8rem
+  background: rgba(61, 58, 143, 0.08)
+  color: var(--brand)
+  font-size: .78rem
   font-weight: 700
+  letter-spacing: .03em
 
 .section-banner
   margin-bottom: 16px
 
 .section-banner h2
   margin: 10px 0 8px
-  color: #ffffff
+  color: var(--text-strong)
   font-size: clamp(1.6rem, 3vw, 2.2rem)
 
 .footer-grid
@@ -355,11 +417,25 @@ footer
 
 footer.page-footer
   background: transparent
-  margin-top: 24px
+  margin-top: 28px
   padding-top: 0
 
 footer.page-footer > .container
-  padding: 0 0 16px
+  padding: 0 0 18px
+
+footer.page-footer > .container > .row
+  background: var(--surface)
+  border: 1px solid var(--border)
+  box-shadow: var(--shadow-md)
+  border-radius: 24px
+  padding: 30px 28px 8px
+
+.footer-brand
+  display: inline-flex
+  padding: 10px 14px
+  background: #ffffff
+  border: 1px solid var(--border)
+  border-radius: 16px
 
 .footer-brand img
   max-width: 180px
@@ -367,7 +443,7 @@ footer.page-footer > .container
   height: auto
 
 .footer-title
-  color: #ffffff
+  color: var(--text-strong)
   font-size: 1rem
   font-weight: 700
   margin: 0 0 14px
@@ -388,20 +464,21 @@ footer.page-footer > .container
   color: var(--muted)
 
 .footer-links a:hover
-  color: #ffffff
+  color: var(--brand-strong)
 
 .footer-copyright
-  background: rgba(8, 11, 22, 0.52)
-  border-top: 1px solid var(--border)
-  color: rgba(255, 255, 255, 0.72)
+  background: transparent
+  color: var(--muted-soft)
 
 .footer-copyright .container
-  padding: 16px 0
+  padding: 16px 0 8px
 
+main h1,
 main h2,
 main h3,
-main h4
-  color: #ffffff
+main h4,
+main h5
+  color: var(--text-strong)
 
 main h2
   margin-top: 34px
@@ -409,12 +486,18 @@ main h2
 
 main h3
   margin-top: 26px
-  font-size: clamp(1.2rem, 2vw, 1.45rem)
+  font-size: clamp(1.18rem, 2vw, 1.45rem)
+
+main h4
+  font-size: 1.1rem
+  margin-top: 22px
 
 main img
   max-width: 100%
   border-radius: 18px
-  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.24)
+  border: 1px solid var(--border)
+  box-shadow: var(--shadow-sm)
+  background: #ffffff
 
 main table
   width: 100%
@@ -423,22 +506,28 @@ main table
   overflow-x: auto
   margin: 22px 0
   border-radius: 16px
+  background: #ffffff
 
 main table tr
-  background: rgba(255, 255, 255, 0.02)
+  background: #ffffff
+
+main table tr:nth-child(even)
+  background: #f9fbfe
 
 main table th,
 main table td
-  border: 1px solid rgba(255, 255, 255, 0.08)
+  border: 1px solid var(--border)
   padding: 12px 14px
+  color: var(--text)
 
 main table th
-  color: #ffffff
-  background: rgba(255, 255, 255, 0.06)
+  color: var(--text-strong)
+  background: #eef3fb
+  font-weight: 700
 
 blockquote
-  border-left: 3px solid var(--accent)
-  background: rgba(255, 255, 255, 0.03)
+  border-left: 4px solid var(--accent)
+  background: linear-gradient(180deg, #fffdf8 0%, #fffaf1 100%)
   margin: 22px 0
   padding: 18px 20px
   border-radius: 0 16px 16px 0
@@ -455,13 +544,45 @@ main ul:not(.browser-default) li,
 main ol li
   margin-bottom: 10px
 
+main hr
+  border: 0
+  height: 1px
+  background: var(--border)
+  margin: 30px 0
+
 .chip
-  background: rgba(255, 255, 255, 0.08)
-  color: #ffffff
-  border: 1px solid rgba(255, 255, 255, 0.08)
+  background: #f3f6fb
+  color: var(--text)
+  border: 1px solid var(--border)
 
 .divider
-  background: rgba(255, 255, 255, 0.08)
+  background: var(--border)
+
+.switch label
+  color: var(--muted)
+
+.switch label .lever
+  background-color: #d6dcea
+
+.switch label input[type=checkbox]:checked + .lever
+  background-color: rgba(61, 58, 143, 0.32)
+
+.switch label input[type=checkbox]:checked + .lever:after
+  background-color: var(--brand)
+
+.collapsible
+  border: 1px solid var(--border)
+
+.collapsible-header,
+.collapsible-body
+  background: #ffffff
+  border-bottom: 1px solid var(--border)
+
+.tooltipped
+  border-bottom: 0
+
+.hidden
+  display: none !important
 
 @media only screen and (max-width: 992px)
   header,
@@ -473,7 +594,8 @@ main ol li
     padding-top: 18px
 
   .top-nav
-    background: rgba(12, 16, 32, 0.92)
+    background: rgba(255, 255, 255, 0.92)
+    border-bottom: 1px solid var(--border)
 
   .app-sidenav
     width: 300px
@@ -497,7 +619,8 @@ main ol li
 
   .hero-panel,
   .section-block,
-  .content-surface
+  .content-surface,
+  footer.page-footer > .container > .row
     padding: 22px
 
   .hero-actions
@@ -506,5 +629,13 @@ main ol li
 
   .hero-actions .btn,
   .hero-actions .btn.btn-ghost
+    width: 100%
+    text-align: center
+
+  .brand-actions
+    flex-direction: column
+
+  .brand-actions .btn,
+  .brand-actions .btn-flat
     width: 100%
     text-align: center

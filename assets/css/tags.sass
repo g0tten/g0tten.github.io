@@ -10,31 +10,33 @@
   margin-bottom: 8px
 
 .tag-chip:hover .chip
-  color: #ffffff
-  background: rgba(108, 99, 255, 0.22)
+  color: var(--brand-strong)
+  background: rgba(61, 58, 143, 0.08)
 
 .tag-div .divider
   margin: 24px 0
 
 .post-date
   margin-left: 10px
-  color: var(--muted)
+  color: var(--muted-soft)
 
 ul:not(.browser-default).tag-post
   padding-left: 0
 
 ul:not(.browser-default).tag-post a
   text-decoration: none
-  color: #dbe2ff
+  color: var(--brand)
 
 ul:not(.browser-default).tag-post li
   list-style-position: inside
   padding: 14px 18px
   border-radius: 14px
-  background: rgba(255, 255, 255, 0.03)
+  background: #ffffff
+  border: 1px solid var(--border)
   margin-bottom: 10px
-  transition: transform .2s ease, background-color .2s ease
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease
 
 ul:not(.browser-default).tag-post li:hover
   transform: translateX(4px)
-  background: rgba(255, 255, 255, 0.06)
+  box-shadow: var(--shadow-sm)
+  border-color: var(--border-strong)

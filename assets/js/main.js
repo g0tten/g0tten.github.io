@@ -1,27 +1,17 @@
 (function($){
   $(function(){
-    $(".button-collapse").sideNav({
-      closeOnClick: true
-    });
+    $(".button-collapse").sideNav();
 
-    $(".collapsible").collapsible();
-    $(".tooltipped").tooltip({delay: 30});
-
-    var currentPath = window.location.pathname.replace(/\/$/, "");
-    if (currentPath === "") {
-      currentPath = "/";
+    var path = window.location.pathname.replace(/index\.html$/, "");
+    if (path === "") {
+      path = "/";
     }
 
     $(".nav-link").each(function(){
       var href = $(this).attr("href");
       if (!href) return;
-
-      var resolved = href.replace(window.location.origin, "").replace(/\/$/, "");
-      if (resolved === "") {
-        resolved = "/";
-      }
-
-      if (resolved === currentPath || (currentPath !== "/" && resolved !== "/" && currentPath.indexOf(resolved) === 0)) {
+      var normalized = href.replace(/index\.html$/, "");
+      if (normalized === path || (normalized !== "/" && path.indexOf(normalized) === 0)) {
         $(this).addClass("is-active");
       }
     });
