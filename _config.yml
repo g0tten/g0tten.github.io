@@ -2,8 +2,7 @@
 title: Gotten
 tagline: Generic MDE framework fOr meTamorphic TEstiNg
 description: >
-  A model-driven environment for defining metamorphic relations, executing experiments,
-  and generating follow-up test cases across application domains.
+  Generic MDE framework fOr meTamorphic TEstiNg
 baseurl: ""
 url: "https://g0tten.github.io"
 permalink: /:year/:month/:day/:title
