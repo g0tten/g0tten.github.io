@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://g0tten.github.io">
-    <img src="https://g0tten.github.io/assets/res/gotten.png" width="120" height="100" alt="Gotten logo" />
+    <img src="https://g0tten.github.io/assets/res/gotten.png" width="120" height="120" alt="Gotten logo" />
   </a>
 </p>
 
