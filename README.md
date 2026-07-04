@@ -28,7 +28,7 @@ Gotten has been applied to domains such as cloud simulators, video streaming API
 
 🌐 **Project website:** https://g0tten.github.io/
 
-> **About this repository:** it contains the source of the Gotten project website, and hosts the Eclipse update site of the Gotten environment (under [`gotten/update-site`](gotten/update-site)).
+> **About this repository:** it contains the source of the Gotten project website, and hosts the Eclipse update site of the Gotten environment (under [`gotten/update-site`](https://g0tten.github.io/gotten/update-site/)).
 
 ## Installation
 
