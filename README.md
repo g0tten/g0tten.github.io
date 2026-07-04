@@ -1,6 +1,26 @@
-# Gotten
+<p align="center">
+  <a href="https://g0tten.github.io">
+    <img src="https://g0tten.github.io/assets/res/gotten.png" width="120" height="100" alt="Gotten logo" />
+  </a>
+</p>
 
-**G**eneric MDE framework f**O**r me**T**amorphic **TE**sti**N**g
+<h1 align="center">Gotten</h1>
+
+<p align="center"><i><strong>G</strong>eneric MDE framework f<strong>O</strong>r me<strong>T</strong>amorphic <strong>TE</strong>sti<strong>N</strong>g</i></p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/version-2.3-blue" alt="Version 2.0">
+  <a href="https://github.com/g0tten/gotten/graphs/contributors"><img src="https://img.shields.io/github/contributors/g0tten/gotten" alt="Contributors"></a>
+  <a href="https://github.com/g0tten/gotten/network/members"><img src="https://img.shields.io/github/forks/g0tten/gotten" alt="Forks"></a>
+  <a href="https://github.com/g0tten/gotten/stargazers"><img src="https://img.shields.io/github/stars/g0tten/gotten" alt="Stars"></a>
+  <a href="https://raw.githubusercontent.com/g0tten/gotten/master/LICENSE"><img src="https://img.shields.io/github/license/g0tten/gotten" alt="License"></a>
+</p>
+
+<p align="center">
+  <a href="https://g0tten.github.io">Website</a> &middot;
+  <a href="https://github.com/g0tten/gotten/issues">Report a bug</a>
+</p>
+
 
 Gotten is a model-driven engineering solution to automate the construction of domain-specific **Metamorphic Testing (MT)** environments. Starting from a meta-model capturing the domain concepts, and a description of the domain execution environment, Gotten produces an MT environment with comprehensive support for the MT process: the definition of domain-specific Metamorphic Relations (MRs), their evaluation, detailed reporting of the testing results, and the automated search-based generation of follow-up test cases.
 
