@@ -9,16 +9,16 @@
 <p align="center"><i><strong>G</strong>eneric MDE framework f<strong>O</strong>r me<strong>T</strong>amorphic <strong>TE</strong>sti<strong>N</strong>g</i></p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-2.3-blue" alt="Version 2.0">
-  <a href="https://github.com/g0tten/gotten/graphs/contributors"><img src="https://img.shields.io/github/contributors/g0tten/gotten" alt="Contributors"></a>
-  <a href="https://github.com/g0tten/gotten/network/members"><img src="https://img.shields.io/github/forks/g0tten/gotten" alt="Forks"></a>
-  <a href="https://github.com/g0tten/gotten/stargazers"><img src="https://img.shields.io/github/stars/g0tten/gotten" alt="Stars"></a>
-  <a href="https://raw.githubusercontent.com/g0tten/gotten/master/LICENSE"><img src="https://img.shields.io/github/license/g0tten/gotten" alt="License"></a>
+  <img src="https://img.shields.io/badge/version-2.0-blue" alt="Version 2.0">
+  <a href="https://github.com/g0tten/g0tten.github.io/graphs/contributors"><img src="https://img.shields.io/github/contributors/g0tten/g0tten.github.io" alt="Contributors"></a>
+  <a href="https://github.com/g0tten/g0tten.github.io/network/members"><img src="https://img.shields.io/github/forks/g0tten/g0tten.github.io" alt="Forks"></a>
+  <a href="https://github.com/g0tten/g0tten.github.io/stargazers"><img src="https://img.shields.io/github/stars/g0tten/g0tten.github.io" alt="Stars"></a>
+  <a href="https://raw.githubusercontent.com/g0tten/g0tten.github.io/master/LICENSE"><img src="https://img.shields.io/github/license/g0tten/g0tten.github.io" alt="License"></a>
 </p>
 
 <p align="center">
   <a href="https://g0tten.github.io">Website</a> &middot;
-  <a href="https://github.com/g0tten/gotten/issues">Report a bug</a>
+  <a href="https://github.com/g0tten/g0tten.github.io/issues">Report a bug</a>
 </p>
 
 
