@@ -32,7 +32,7 @@ Gotten has been applied to domains such as cloud simulators, video streaming API
 
 ## Installation
 
-Gotten is provided as a set of Eclipse plug-ins. It requires **Java 11** installed on your machine.
+Gotten is provided as a set of Eclipse plug-ins. It requires **Java 21** installed on your machine.
 
 ### Option 1: Install from the update site (recommended)
 
