@@ -79,16 +79,11 @@ small
 
 main
   flex: 1 0 auto
-  padding-left: 320px
   padding-top: 28px
   padding-bottom: 32px
 
-header,
-footer
-  padding-left: 320px
-
 .container
-  width: min(1140px, 92%)
+  width: min(1008px, 92%)
 
 .app-shell
   min-height: calc(100vh - 200px)
@@ -98,6 +93,10 @@ footer
   box-shadow: none
   height: 72px
   line-height: 72px
+
+@media only screen and (min-width: 993px)
+  .top-nav
+    display: none
 
 .top-nav .nav-wrapper
   background: transparent
@@ -117,6 +116,108 @@ footer
   color: var(--text-strong)
   font-size: 2rem
   line-height: 1
+
+.page-header
+  color: #ffffff
+  text-align: center
+  background-color: #5b1f6e
+  background-image: var(--grad)
+  padding: 3rem 4rem 2.25rem
+
+.header-logo
+  display: inline-flex
+  padding: 12px
+  background: #ffffff
+  border: 1px solid rgba(255, 255, 255, 0.4)
+  border-radius: 26px
+  box-shadow: 0 10px 24px rgba(28, 6, 38, 0.28)
+  margin-bottom: .85rem
+
+.header-logo img
+  display: block
+  width: 96px
+  height: 96px
+  border-radius: 18px
+
+.project-name
+  margin: 0 0 .1rem
+  font-size: 2.75rem
+  font-weight: 700
+  line-height: 1.1
+
+.project-name a
+  color: #ffffff
+
+.project-name a:hover,
+.project-name a:focus
+  color: #ffffff
+  text-decoration: none
+
+.project-tagline
+  margin: 0 0 1.4rem
+  font-size: 1.2rem
+  font-weight: 400
+  opacity: .85
+
+.header-actions
+  max-width: 62rem
+  margin: 0 auto
+
+.page-header .btn
+  display: inline-block
+  height: auto
+  margin: 0.2rem 0.18rem
+  padding: 0.5rem 0.9rem
+  color: rgba(255, 255, 255, 0.9)
+  background-color: rgba(255, 255, 255, 0.1)
+  border: 1px solid rgba(255, 255, 255, 0.28)
+  border-radius: 0.35rem
+  box-shadow: none
+  font-size: 0.82rem
+  font-weight: 700
+  line-height: 1.2
+  text-transform: none
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s
+
+.page-header .btn:hover,
+.page-header .btn:focus
+  color: #ffffff
+  background-color: rgba(255, 255, 255, 0.22)
+  border-color: rgba(255, 255, 255, 0.45)
+  text-decoration: none
+
+.page-header .btn.is-active
+  color: #ffffff
+  background-color: rgba(255, 255, 255, 0.26)
+  border-color: rgba(255, 255, 255, 0.55)
+
+@media only screen and (max-width: 992px)
+  .page-header
+    padding: 2.25rem 2rem 1.75rem
+
+  .project-name
+    font-size: 2.15rem
+
+  .project-tagline
+    font-size: 1.1rem
+
+@media only screen and (max-width: 600px)
+  .page-header
+    padding: 1.5rem 1rem 1.25rem
+
+  .project-name
+    font-size: 1.75rem
+
+  .project-tagline
+    font-size: 1rem
+
+  .header-logo img
+    width: 72px
+    height: 72px
+
+  .page-header .btn
+    padding: 0.45rem 0.7rem
+    font-size: 0.78rem
 
 .app-sidenav
   width: 320px
@@ -210,8 +311,7 @@ footer
   gap: 10px
   flex-wrap: wrap
 
-.brand-actions .btn,
-.hero-actions .btn
+.brand-actions .btn
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
   background: #ffffff
   color: var(--brand)
@@ -221,13 +321,24 @@ footer
   font-weight: 700
   letter-spacing: .01em
 
-.brand-actions .btn:hover,
-.hero-actions .btn:hover
+.brand-actions .btn:hover
   background: rgba(255, 255, 255, 0.88)
   color: var(--brand-strong)
 
-.brand-actions .btn-flat,
-.btn.btn-ghost
+.hero-actions .btn
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
+  background: var(--brand)
+  color: #ffffff
+  border-radius: 999px
+  box-shadow: none
+  text-transform: none
+  font-weight: 700
+  letter-spacing: .01em
+
+.hero-actions .btn:hover
+  background: var(--brand-strong)
+
+.brand-actions .btn-flat
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
   color: rgba(255, 255, 255, 0.9)
   border-radius: 999px
@@ -236,11 +347,23 @@ footer
   text-transform: none
   font-weight: 700
 
-.brand-actions .btn-flat:hover,
-.btn.btn-ghost:hover
+.brand-actions .btn-flat:hover
   background: rgba(255, 255, 255, 0.22)
   border-color: rgba(255, 255, 255, 0.45)
   color: #ffffff
+
+.hero-actions .btn.btn-ghost
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
+  color: var(--brand)
+  border-radius: 999px
+  background: rgba(91, 31, 110, 0.06)
+  border: 1px solid rgba(91, 31, 110, 0.18)
+  text-transform: none
+  font-weight: 700
+
+.hero-actions .btn.btn-ghost:hover
+  background: rgba(91, 31, 110, 0.11)
+  color: var(--brand-strong)
 
 .nav-section-label
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
@@ -360,12 +483,19 @@ footer
   gap: 26px
   padding: 38px
   border-radius: 28px
-  background-color: #5b1f6e
-  background-image: var(--grad)
-  border: none
-  box-shadow: 0 18px 44px rgba(28, 6, 38, 0.3)
+  background: linear-gradient(180deg, #ffffff 0%, #fbf9fc 100%)
+  border: 1px solid var(--border)
+  box-shadow: var(--shadow-md)
   overflow: hidden
   position: relative
+
+.hero-panel::before
+  content: ""
+  position: absolute
+  inset: 0 auto auto 0
+  width: 100%
+  height: 6px
+  background: var(--grad)
 
 .hero-panel::after
   content: ""
@@ -375,14 +505,8 @@ footer
   width: 260px
   height: 260px
   border-radius: 50%
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.14), transparent 70%)
+  background: radial-gradient(circle, rgba(91, 31, 110, 0.08), transparent 70%)
   pointer-events: none
-
-.hero-panel h1
-  color: #ffffff
-
-.hero-panel .eyebrow
-  color: rgba(255, 255, 255, 0.85)
 
 .hero-panel__copy,
 .hero-panel__aside
@@ -396,7 +520,7 @@ footer
   font-size: 1.08rem
   max-width: 44rem
   margin: 18px 0 0
-  color: rgba(255, 255, 255, 0.88)
+  color: var(--muted)
 
 .hero-actions
   margin-top: 28px
@@ -416,20 +540,6 @@ footer
   display: grid
   gap: 14px
   align-content: start
-
-.hero-panel .metric-card
-  background: rgba(255, 255, 255, 0.1)
-  border: 1px solid rgba(255, 255, 255, 0.26)
-  box-shadow: none
-
-.hero-panel .metric-card strong
-  color: #ffffff
-
-.hero-panel .metric-card p
-  color: rgba(255, 255, 255, 0.82)
-
-.hero-panel .metric-card .metric-card__label
-  color: #ffd9cf
 
 .metric-card
   background: linear-gradient(180deg, #ffffff 0%, #fbf9fc 100%)
@@ -483,11 +593,12 @@ footer.page-footer > .container
   padding: 0 0 18px
 
 footer.page-footer > .container > .row
-  background: var(--surface)
-  border: 1px solid var(--border)
-  box-shadow: var(--shadow-md)
-  border-radius: 24px
-  padding: 30px 28px 8px
+  background: transparent
+  border: none
+  border-top: 1px solid #ece6f0
+  box-shadow: none
+  border-radius: 0
+  padding: 30px 0 8px
 
 .footer-brand
   display: inline-flex
