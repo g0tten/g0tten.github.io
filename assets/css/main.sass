@@ -1,25 +1,28 @@
 ---
 ---
 \:root
-  --bg: #f5f7fb
-  --bg-soft: #eef2f8
-  --bg-accent: #e9eef8
+  --bg: #faf9fb
+  --bg-soft: #f5f2f7
+  --bg-accent: #f0eaf3
   --surface: #ffffff
-  --surface-alt: #f8fafd
-  --surface-strong: #eef3fb
-  --border: #d9e1ee
-  --border-strong: #c6d2e4
-  --text: #23324a
-  --text-strong: #172235
-  --muted: #58657c
-  --muted-soft: #73819a
-  --brand: #3d3a8f
-  --brand-strong: #2f2c77
-  --accent: #d28a1f
-  --accent-soft: #f6ead2
+  --surface-alt: #faf8fb
+  --surface-strong: #f5f1f8
+  --border: #e6e1ea
+  --border-strong: #d8cfdf
+  --text: #3d434c
+  --text-strong: #2c2333
+  --muted: #6e7681
+  --muted-soft: #8b8794
+  --brand: #5b1f6e
+  --brand-strong: #431358
+  --link: #8c3268
+  --accent: #c95c4b
+  --accent-soft: #f7e5e0
   --success: #1f7a62
-  --shadow-sm: 0 10px 24px rgba(29, 43, 72, 0.06)
-  --shadow-md: 0 18px 44px rgba(29, 43, 72, 0.09)
+  --grad: linear-gradient(135deg, #431358 0%, #8e3372 55%, #c95c4b 100%)
+  --grad-vert: linear-gradient(175deg, #431358 0%, #8e3372 62%, #c95c4b 100%)
+  --shadow-sm: 0 10px 24px rgba(67, 19, 88, 0.06)
+  --shadow-md: 0 18px 44px rgba(67, 19, 88, 0.09)
   --radius: 20px
   --radius-sm: 14px
 
@@ -30,9 +33,9 @@ body
   display: flex
   min-height: 100vh
   flex-direction: column
-  background: linear-gradient(180deg, #f7f9fc 0%, #f2f5fa 100%)
+  background: linear-gradient(180deg, #faf9fb 0%, #f5f2f7 100%)
   color: var(--text)
-  font-family: "Source Sans 3", "Segoe UI", Roboto, Helvetica, Arial, sans-serif
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
   -webkit-font-smoothing: antialiased
   text-rendering: optimizeLegibility
 
@@ -42,19 +45,19 @@ body
 main h1,
 main h2,
 main h3
-  font-family: "Titillium Web", "Segoe UI", Arial, sans-serif
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
   letter-spacing: -.01em
 
 body::before
   content: ""
   position: fixed
   inset: 0
-  background: radial-gradient(circle at top right, rgba(61, 58, 143, 0.08), transparent 28%), radial-gradient(circle at left center, rgba(210, 138, 31, 0.06), transparent 24%)
+  background: radial-gradient(circle at top right, rgba(91, 31, 110, 0.07), transparent 28%), radial-gradient(circle at left center, rgba(201, 92, 75, 0.05), transparent 24%)
   pointer-events: none
   z-index: -1
 
 a
-  color: var(--brand)
+  color: var(--link)
   transition: color .2s ease, opacity .2s ease, transform .2s ease, box-shadow .2s ease, background-color .2s ease
 
 
@@ -100,7 +103,7 @@ footer
   background: transparent
 
 .page-title
-  font-family: "Titillium Web", "Segoe UI", Arial, sans-serif
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
   font-size: 1rem
   font-weight: 700
   letter-spacing: .08em
@@ -117,14 +120,15 @@ footer
 
 .app-sidenav
   width: 320px
-  background: linear-gradient(180deg, #fbfcff 0%, #f4f7fb 100%)
-  border-right: 1px solid var(--border)
+  background-color: #431358
+  background-image: var(--grad-vert)
+  border-right: none
   box-shadow: none
   overflow-y: auto
 
 .app-sidenav li > a
-  font-family: "Titillium Web", "Segoe UI", Arial, sans-serif
-  color: var(--text)
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
+  color: rgba(255, 255, 255, 0.9)
   font-weight: 600
   border-radius: 12px
   margin: 0 16px 6px
@@ -132,16 +136,16 @@ footer
 
 .app-sidenav li > a:hover,
 .app-sidenav li > a:focus
-  background: var(--surface-strong)
-  color: var(--text-strong)
+  background: rgba(255, 255, 255, 0.14)
+  color: #ffffff
   transform: translateX(2px)
 
 .app-sidenav li > a i
   color: inherit
 
 .app-sidenav .nav-link.is-active
-  background: linear-gradient(90deg, rgba(61, 58, 143, 0.12), rgba(210, 138, 31, 0.12))
-  color: var(--brand-strong)
+  background: rgba(255, 255, 255, 0.2)
+  color: #ffffff
   font-weight: 700
 
 .brand-lockup-row
@@ -163,9 +167,9 @@ footer
   justify-content: center
   padding: 14px 18px
   background: #ffffff
-  border: 1px solid var(--border)
+  border: 1px solid rgba(255, 255, 255, 0.4)
   border-radius: 20px
-  box-shadow: var(--shadow-sm)
+  box-shadow: 0 10px 24px rgba(28, 6, 38, 0.28)
   margin: 0
 
 .brand-lockup--gotten
@@ -178,6 +182,9 @@ footer
   width: 100%
   max-width: 228px
   padding: 12px 18px
+  background: rgba(255, 255, 255, 0.1)
+  border: 1px solid rgba(255, 255, 255, 0.28)
+  box-shadow: none
 
 .brand-logo
   display: block
@@ -195,7 +202,7 @@ footer
 
 .brand-summary
   margin: 0 0 18px
-  color: var(--muted)
+  color: rgba(255, 255, 255, 0.85)
   font-size: 1rem
 
 .brand-actions
@@ -205,8 +212,9 @@ footer
 
 .brand-actions .btn,
 .hero-actions .btn
-  font-family: "Titillium Web", "Segoe UI", Arial, sans-serif
-  background: var(--brand)
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
+  background: #ffffff
+  color: var(--brand)
   border-radius: 999px
   box-shadow: none
   text-transform: none
@@ -215,26 +223,28 @@ footer
 
 .brand-actions .btn:hover,
 .hero-actions .btn:hover
-  background: var(--brand-strong)
+  background: rgba(255, 255, 255, 0.88)
+  color: var(--brand-strong)
 
 .brand-actions .btn-flat,
 .btn.btn-ghost
-  font-family: "Titillium Web", "Segoe UI", Arial, sans-serif
-  color: var(--brand)
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
+  color: rgba(255, 255, 255, 0.9)
   border-radius: 999px
-  background: rgba(61, 58, 143, 0.06)
-  border: 1px solid rgba(61, 58, 143, 0.14)
+  background: rgba(255, 255, 255, 0.1)
+  border: 1px solid rgba(255, 255, 255, 0.28)
   text-transform: none
   font-weight: 700
 
 .brand-actions .btn-flat:hover,
 .btn.btn-ghost:hover
-  background: rgba(61, 58, 143, 0.1)
-  color: var(--brand-strong)
+  background: rgba(255, 255, 255, 0.22)
+  border-color: rgba(255, 255, 255, 0.45)
+  color: #ffffff
 
 .nav-section-label
-  font-family: "Titillium Web", "Segoe UI", Arial, sans-serif
-  color: var(--muted-soft)
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
+  color: rgba(255, 255, 255, 0.62)
   font-size: .8rem
   font-weight: 700
   letter-spacing: .12em
@@ -265,7 +275,7 @@ footer
 .page-hero h1,
 .hero-panel h1
   margin: 12px 0 0
-  color: var(--text-strong)
+  color: var(--brand)
   font-weight: 800
   line-height: 1.14
 
@@ -281,7 +291,7 @@ footer
   box-shadow: var(--shadow-md)
 
 .section-block--accent
-  background: linear-gradient(180deg, #fbfcff 0%, #f7f9fd 100%)
+  background: linear-gradient(180deg, #fdfcfe 0%, #f9f6fa 100%)
 
 .content-surface
   padding: 34px
@@ -304,12 +314,12 @@ footer
 .callout-card,
 .contact-card,
 .metric-card
-  background: linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%)
+  background: linear-gradient(180deg, #ffffff 0%, #fcfafc 100%)
   border: 1px solid var(--border)
   border-radius: 18px
   padding: 24px
   height: 100%
-  box-shadow: 0 10px 22px rgba(29, 43, 72, 0.04)
+  box-shadow: 0 10px 22px rgba(67, 19, 88, 0.04)
 
 .info-card h3,
 .callout-card h3,
@@ -350,19 +360,12 @@ footer
   gap: 26px
   padding: 38px
   border-radius: 28px
-  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%)
-  border: 1px solid var(--border)
-  box-shadow: var(--shadow-md)
+  background-color: #5b1f6e
+  background-image: var(--grad)
+  border: none
+  box-shadow: 0 18px 44px rgba(28, 6, 38, 0.3)
   overflow: hidden
   position: relative
-
-.hero-panel::before
-  content: ""
-  position: absolute
-  inset: 0 auto auto 0
-  width: 100%
-  height: 6px
-  background: linear-gradient(90deg, var(--brand), var(--accent))
 
 .hero-panel::after
   content: ""
@@ -372,8 +375,14 @@ footer
   width: 260px
   height: 260px
   border-radius: 50%
-  background: radial-gradient(circle, rgba(61, 58, 143, 0.08), transparent 70%)
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.14), transparent 70%)
   pointer-events: none
+
+.hero-panel h1
+  color: #ffffff
+
+.hero-panel .eyebrow
+  color: rgba(255, 255, 255, 0.85)
 
 .hero-panel__copy,
 .hero-panel__aside
@@ -387,7 +396,7 @@ footer
   font-size: 1.08rem
   max-width: 44rem
   margin: 18px 0 0
-  color: var(--muted)
+  color: rgba(255, 255, 255, 0.88)
 
 .hero-actions
   margin-top: 28px
@@ -408,8 +417,22 @@ footer
   gap: 14px
   align-content: start
 
+.hero-panel .metric-card
+  background: rgba(255, 255, 255, 0.1)
+  border: 1px solid rgba(255, 255, 255, 0.26)
+  box-shadow: none
+
+.hero-panel .metric-card strong
+  color: #ffffff
+
+.hero-panel .metric-card p
+  color: rgba(255, 255, 255, 0.82)
+
+.hero-panel .metric-card .metric-card__label
+  color: #ffd9cf
+
 .metric-card
-  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%)
+  background: linear-gradient(180deg, #ffffff 0%, #fbf9fc 100%)
 
 .metric-card__label
   display: block
@@ -434,7 +457,7 @@ footer
   margin-bottom: 14px
   padding: 6px 10px
   border-radius: 999px
-  background: rgba(61, 58, 143, 0.08)
+  background: rgba(91, 31, 110, 0.08)
   color: var(--brand)
   font-size: .78rem
   font-weight: 700
@@ -514,7 +537,7 @@ main h2,
 main h3,
 main h4,
 main h5
-  color: var(--text-strong)
+  color: var(--brand)
 
 main h2
   margin-top: 34px
@@ -523,6 +546,13 @@ main h2
 main h3
   margin-top: 26px
   font-size: clamp(1.18rem, 2vw, 1.45rem)
+
+.page-content h2,
+.page-content h3,
+.content-surface h2,
+.content-surface h3
+  padding-bottom: .35rem
+  border-bottom: 1px solid #ece6f0
 
 main h4
   font-size: 1.1rem
@@ -548,7 +578,7 @@ main table tr
   background: #ffffff
 
 main table tr:nth-child(even)
-  background: #f9fbfe
+  background: #faf8fb
 
 main table th,
 main table td
@@ -557,13 +587,13 @@ main table td
   color: var(--text)
 
 main table th
-  color: var(--text-strong)
-  background: #eef3fb
+  color: var(--brand)
+  background: #f5f1f8
   font-weight: 700
 
 blockquote
   border-left: 4px solid var(--accent)
-  background: linear-gradient(180deg, #fffdf8 0%, #fffaf1 100%)
+  background: linear-gradient(180deg, #fdf9f7 0%, #faf3f0 100%)
   margin: 22px 0
   padding: 18px 20px
   border-radius: 0 16px 16px 0
@@ -571,6 +601,37 @@ blockquote
 pre,
 code
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace
+
+main code
+  padding: 2px 5px
+  font-size: .88em
+  color: #4a2a56
+  background-color: #f5f1f8
+  border-radius: 5px
+
+main pre
+  padding: .9rem 1rem
+  color: #46505c
+  background-color: #f8f7fa
+  border: 1px solid var(--border)
+  border-left: 4px solid var(--accent)
+  border-radius: 8px
+  line-height: 1.5
+  overflow: auto
+
+main pre code
+  padding: 0
+  color: inherit
+  background: transparent
+  border-radius: 0
+
+main .highlight pre
+  border: none
+  margin-bottom: 0
+
+main .highlight
+  margin: 0 0 1.1rem
+  border-left: 4px solid var(--accent)
 
 main ul:not(.browser-default),
 main ol
@@ -587,7 +648,7 @@ main hr
   margin: 30px 0
 
 .chip
-  background: #f3f6fb
+  background: #f5f1f8
   color: var(--text)
   border: 1px solid var(--border)
 
@@ -601,7 +662,7 @@ main hr
   background-color: #d6dcea
 
 .switch label input[type=checkbox]:checked + .lever
-  background-color: rgba(61, 58, 143, 0.32)
+  background-color: rgba(140, 50, 104, 0.35)
 
 .switch label input[type=checkbox]:checked + .lever:after
   background-color: var(--brand)
