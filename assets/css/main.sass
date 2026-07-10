@@ -813,6 +813,165 @@ main hr
 .hidden
   display: none !important
 
+
+/* --- narrative content shape (EMF Kaizen style) --- */
+
+section[id]
+  scroll-margin-top: 24px
+
+.page-intro
+  max-width: 50rem
+  margin: 8px auto 0
+  padding: 30px 8px 4px
+  text-align: center
+
+.page-intro h2
+  margin: 12px 0 0
+  color: var(--brand)
+  font-weight: 800
+  line-height: 1.2
+  font-size: clamp(1.7rem, 3vw, 2.35rem)
+
+.intro-lead
+  margin: 18px auto 0
+  max-width: 46rem
+  color: var(--muted)
+  font-size: 1.05rem
+
+.intro-actions
+  margin-top: 26px
+  display: flex
+  gap: 12px
+  flex-wrap: wrap
+  justify-content: center
+
+.intro-actions .btn
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
+  background: var(--brand)
+  color: #ffffff
+  border-radius: 999px
+  box-shadow: none
+  text-transform: none
+  font-weight: 700
+  letter-spacing: .01em
+  min-height: 44px
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  padding: 0 22px
+
+.intro-actions .btn:hover
+  background: var(--brand-strong)
+
+.intro-actions .btn.btn-ghost
+  color: var(--brand)
+  background: rgba(47, 79, 158, 0.06)
+  border: 1px solid rgba(47, 79, 158, 0.18)
+
+.intro-actions .btn.btn-ghost:hover
+  background: rgba(47, 79, 158, 0.11)
+  color: var(--brand-strong)
+
+.capability-list
+  list-style: none
+  margin: 0 0 20px
+  padding: 0
+
+.capability-list li
+  position: relative
+  padding-left: 26px
+  margin-bottom: 10px
+  color: var(--muted)
+
+.capability-list li::before
+  content: ""
+  position: absolute
+  left: 4px
+  top: .55em
+  width: 9px
+  height: 9px
+  border-radius: 50%
+  background: var(--accent)
+
+.step
+  margin-top: 30px
+
+.step:first-of-type
+  margin-top: 6px
+
+.step h3
+  display: flex
+  align-items: center
+  gap: 12px
+  border-bottom: 1px solid #e4eaf4
+  padding-bottom: .4rem
+
+.step-number
+  flex: none
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  width: 32px
+  height: 32px
+  border-radius: 50%
+  background: var(--brand)
+  color: #ffffff
+  font-size: 1rem
+  font-weight: 700
+
+main figure
+  margin: 22px auto
+  text-align: center
+
+main figcaption,
+.fig-note
+  margin: 10px auto 0
+  max-width: 46rem
+  font-size: .93rem
+  line-height: 1.6
+  color: var(--muted-soft)
+
+.fig-note
+  margin-top: -2px
+  margin-bottom: 18px
+
+.video-grid
+  display: grid
+  grid-template-columns: repeat(2, minmax(0, 1fr))
+  gap: 22px
+
+.video-grid figure
+  margin: 0
+
+.video-frame
+  position: relative
+  padding-bottom: 56.25%
+  height: 0
+  overflow: hidden
+  border-radius: 16px
+  border: 1px solid var(--border)
+  box-shadow: var(--shadow-sm)
+  background: #0b1120
+
+.video-frame iframe
+  position: absolute
+  inset: 0
+  width: 100%
+  height: 100%
+  border: 0
+
+.pub-list
+  margin: 0
+  padding-left: 22px
+
+.pub-list li
+  color: var(--muted)
+  margin-bottom: 12px
+
+@media only screen and (max-width: 992px)
+  .video-grid
+    grid-template-columns: 1fr
+
 @media only screen and (max-width: 992px)
   header,
   main,
