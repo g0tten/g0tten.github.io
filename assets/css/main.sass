@@ -122,7 +122,7 @@ main
   text-align: center
   background-color: #5b1f6e
   background-image: var(--grad)
-  padding: 3rem 4rem 2.25rem
+  padding: 3.25rem 4rem 2.5rem
 
 .header-logo
   display: inline-flex
@@ -159,9 +159,22 @@ main
   font-weight: 400
   opacity: .85
 
+.page-header nav,
+nav.header-actions
+  background: transparent
+  box-shadow: none
+  height: auto
+  line-height: normal
+  width: auto
+
 .header-actions
-  max-width: 62rem
+  max-width: 58rem
   margin: 0 auto
+  padding: 0
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  gap: 2px
 
 .page-header .btn
   display: inline-block
@@ -190,6 +203,13 @@ main
   color: #ffffff
   background-color: rgba(255, 255, 255, 0.26)
   border-color: rgba(255, 255, 255, 0.55)
+
+.page-header a
+  text-decoration: none
+
+.page-header a:hover,
+.page-header a:focus
+  text-decoration: none
 
 @media only screen and (max-width: 992px)
   .page-header
@@ -480,6 +500,7 @@ main
 .hero-panel
   display: grid
   grid-template-columns: minmax(0, 1.45fr) minmax(320px, .95fr)
+  align-items: center
   gap: 26px
   padding: 38px
   border-radius: 28px
