@@ -3,11 +3,11 @@ layout: page
 title: "Overview"
 ---
 
-We propose a model-driven engineering approach to automate the construction of Metamorphic Testing (MT) environments. Starting from a meta-model capturing the domain concepts, and a description of the domain execution environment, our approach produces an MT environment featuring comprehensive support for the MT process. This includes the definition of domain-specific Metamorphic Relations (MRs), their evaluation, detailed reporting of the testing results, and the automated search-based generation of follow-up test cases.
+Gotten is a model-driven engineering approach that automates the construction of Metamorphic Testing (MT) environments. Starting from a meta-model that captures the concepts of a domain and a description of the domain execution environment, Gotten produces a tailored MT environment. This environment supports the definition and evaluation of domain-specific Metamorphic Relations (MRs), detailed reporting of test results, and the automated search-based generation of follow-up test cases.
 
-### The mrDSL language for the definition and execution of MRs
+### Defining and executing metamorphic relations with mrDSL
 
-With that purpose, the Gotten environment provides a DSL called mrDSL to define and execute MRs. There you can declare the domain meta-models and the instance names used, the input features, that are defined by means of an OCL expression, the output features, the processors' attributes and the MRs.
+Gotten provides a domain-specific language called **mrDSL** for defining and executing MRs. An mrDSL program declares the domain meta-models and model instance names, input features expressed through OCL, output features, processor attributes, and the metamorphic relations to be evaluated.
 
 ```
 metamodel datacentre "/sample.gotten/model/datac.ecore" with m1, m2
@@ -34,9 +34,9 @@ MetamorphicRelations {
 }
 ```
 
-### The fowDSL language for the follow-up test cases generation
+### Generating follow-up test cases with fowDSL
 
-Gotten provides a DSL for the follow-up test cases generation called fowDSL. The followup-test cases generation method is based on [MOMoT](http://martin-fleck.github.io/momot/). There you can define the conditions of the followup-test cases generation for each MR. You can define for the corresponding feature the desired operations to increase/decrease numeric attributes or to create/delete objects, also setting the operation limits.
+Gotten also provides **fowDSL**, a language for configuring the generation of follow-up test cases. The generation method is based on [MOMoT](http://martin-fleck.github.io/momot/). For each MR, users can specify the allowed model operations, such as increasing or decreasing numerical attributes or creating and deleting objects. They can also define operation limits, optimisation objectives, the maximum number of solutions, and the search algorithms to be used.
 
 ```
 followups for datacentre using MR1
@@ -53,57 +53,59 @@ iterations 2
 algorithms [Random, NSGAII, NSGAIII, eMOEA]
 ```
 
-### Gotten installation
+### Installation
 
-- [Gotten environment update-site](https://g0tten.github.io/gotten/update-site) to be used from the Eclipse Install New Software facility:
+- Install Gotten from the [Eclipse update site](https://g0tten.github.io/gotten/update-site) by using the Eclipse **Install New Software** facility.
 
-![Gotten installation](https://raw.githubusercontent.com/g0tten/images/main/ide/gotten_update-site.png)
+![Installing Gotten from the Eclipse update site](https://raw.githubusercontent.com/g0tten/images/main/ide/gotten_update-site.png)
 
-- For Windows users, we provide this [Standalone Eclipse+Gotten for Windows](https://www.dropbox.com/scl/fi/r79boq7wxzbwey0n3umwq/eclipse.zip?rlkey=qyb55mg285dsj7w4kwmki0gkd&dl=0) version.
-- For Ubuntu users, we provide this [Standalone Eclipse+Gotten for Ubuntu](https://www.dropbox.com/scl/fi/qnwgkz7r0dk0aa97qe5m0/eclipse.zip?rlkey=oqfhb39zwi8ncqp1ogs20aogz&dl=0) version.
-- To use Gotten directly, we provide this [Ubuntu 20.04 VirtualBox VM+Gotten](https://www.dropbox.com/s/m4s7rjk1tywl8cf/Ubuntu-20.04.x64-Gotten.zip?dl=0) version.
+- Download the [standalone Eclipse with Gotten for Windows](https://www.dropbox.com/scl/fi/r79boq7wxzbwey0n3umwq/eclipse.zip?rlkey=qyb55mg285dsj7w4kwmki0gkd&dl=0).
+- Download the [standalone Eclipse with Gotten for Ubuntu](https://www.dropbox.com/scl/fi/qnwgkz7r0dk0aa97qe5m0/eclipse.zip?rlkey=oqfhb39zwi8ncqp1ogs20aogz&dl=0).
+- Download the [Ubuntu 20.04 VirtualBox virtual machine with Gotten pre-installed](https://www.dropbox.com/s/m4s7rjk1tywl8cf/Ubuntu-20.04.x64-Gotten.zip?dl=0).
 
-### Gotten for cloud projects
+### Sample projects
 
-- [Gotten for cloud simple project](https://github.com/g0tten/sample/zipball/main)
-- [Gotten for cloud evaluation project](https://github.com/g0tten/evaluation/zipball/main)
+#### Cloud simulators
 
-### Gotten for video streaming APIs
+- [Simple Gotten cloud project](https://github.com/g0tten/sample/zipball/main)
+- [Gotten cloud evaluation project](https://github.com/g0tten/evaluation/zipball/main)
+
+#### Video streaming APIs
 
 - [Gotten for YouTube and Vimeo](https://github.com/g0tten/video/zipball/main)
 
-### The Gotten environment in action
+### Demonstrations
 
-- This is the Gotten development environment in action (click on image to see YouTube demo):
+Select the image below to watch a demonstration of the Gotten development environment.
 
-[![Gotten environment in action](https://raw.githubusercontent.com/g0tten/images/main/ide/gotten_screenshot.png)](https://youtu.be/PVVtZCxcnNc)
+[![Gotten development environment in action](https://raw.githubusercontent.com/g0tten/images/main/ide/gotten_screenshot.png)](https://youtu.be/PVVtZCxcnNc)
 
-### Presentation of the Gotten environment
+Select the following image to watch a short introductory presentation of Gotten.
 
-- A short introduction video presentation of the Gotten environment (click on image to see YouTube presentation):
+[![Introductory presentation of the Gotten environment](https://raw.githubusercontent.com/g0tten/images/main/ide/gotten_screenshot2.png)](https://youtu.be/DeuIW6V4LaQ)
 
-[![Gotten environment presentation](https://raw.githubusercontent.com/g0tten/images/main/ide/gotten_screenshot2.png)](https://youtu.be/DeuIW6V4LaQ)
+The following image shows the wizard that guides users through the MT process.
 
-- This is the Gotten wizard to execute the MT process:
-
-![Gotten wizard](https://raw.githubusercontent.com/g0tten/images/main/ide/gotten_wizard.png)
+![Gotten wizard for executing the MT process](https://raw.githubusercontent.com/g0tten/images/main/ide/gotten_wizard.png)
 
 ### Authors and contributors
 
-Gotten has been developed by [Pablo Gómez-Abajo](https://github.com/gomezabajo), [Pablo C. Cañizares](https://github.com/PabloCCanizares), [Alberto Núñez](https://github.com/albenune), [Esther Guerra](https://github.com/estherguerra) and [Juan de Lara](https://github.com/jdelara). At this point, we would like to thank the developers of the following frameworks, which we have used in order to develop Gotten:
+Gotten has been developed by [Pablo Gómez-Abajo](https://github.com/gomezabajo), [Pablo C. Cañizares](https://github.com/PabloCCanizares), [Alberto Núñez](https://github.com/albenune), [Esther Guerra](https://github.com/estherguerra), and [Juan de Lara](https://github.com/jdelara).
 
-- [Xtext](https://www.eclipse.org/Xtext/): Xtext tailors the development of programming languages and domain-specific languages. With Xtext you define your language using a powerful grammar language.
-- [Henshin](https://www.eclipse.org/henshin/): Henshin is used to formulate the transformation units to manipulate the model.
-- [MOMoT](http://martin-fleck.github.io/momot/): MOMoT is a framework that combines MDE techniques with search-based optimization (population-based search and local search) to solve highly complex problems on model level.
+We also acknowledge the developers of the frameworks used to implement Gotten:
+
+- [Xtext](https://www.eclipse.org/Xtext/) supports the development of programming languages and domain-specific languages through a grammar-based approach.
+- [Henshin](https://www.eclipse.org/henshin/) is used to define the transformation units that manipulate models.
+- [MOMoT](http://martin-fleck.github.io/momot/) combines model-driven engineering with search-based optimisation to solve complex model-level problems.
 
 ### Related publications
 
-4. [Towards metamorphic testing with LLM-based workflows: Metamorphic relation inference and follow-up test case generation](https://www.sciencedirect.com/science/article/pii/S0950584926001394). Pablo C. Cañizares, Pablo Gómez-Abajo, Esther Guerra, Juan de Lara. 2026. In [*Information and Software Technology*](https://www.sciencedirect.com/journal/information-and-software-technology) (Elsevier).
-3. [<span style="font-variant:small-caps;">Gotten</span>: A model-driven solution to engineer domain-specific metamorphic testing environments](https://ieeexplore.ieee.org/document/10350786). Pablo Gómez-Abajo, Pablo C. Cañizares, Alberto Núñez, Esther Guerra, Juan de Lara. 2023. In [*ACM/IEEE 26th International Conference on Model Driven Engineering Languages and Systems (MoDELS 2023)*](https://conf.researchr.org/home/models-2023), Västerås.
-2. [Automated engineering of domain-specific metamorphic testing environments](https://www.sciencedirect.com/science/article/pii/S0950584923000186). Pablo Gómez-Abajo, Pablo C. Cañizares, Alberto Núñez, Esther Guerra, Juan de Lara. 2023. In [*Information and Software Technology*](https://www.sciencedirect.com/journal/information-and-software-technology) (Elsevier).
-1. [New ideas: Automated engineering of metamorphic testing environments for domain-specific languages](https://dl.acm.org/doi/10.1145/3486608.3486904). Pablo C. Cañizares, Pablo Gómez-Abajo, Alberto Núñez, Esther Guerra, Juan de Lara. 2021. In [*ACM SIGPLAN International Conference on Software Language Engineering (SLE 2021)*](https://conf.researchr.org/home/sle-2021?), Chicago. **Best new ideas/vision paper award at SLE'21**.
+4. [Towards metamorphic testing with LLM-based workflows: Metamorphic relation inference and follow-up test case generation](https://www.sciencedirect.com/science/article/pii/S0950584926001394). Pablo C. Cañizares, Pablo Gómez-Abajo, Esther Guerra, Juan de Lara. 2026. In [*Information and Software Technology*](https://www.sciencedirect.com/journal/information-and-software-technology), Elsevier.
+3. [<span style="font-variant:small-caps;">Gotten</span>: A model-driven solution to engineer domain-specific metamorphic testing environments](https://ieeexplore.ieee.org/document/10350786). Pablo Gómez-Abajo, Pablo C. Cañizares, Alberto Núñez, Esther Guerra, Juan de Lara. 2023. In the [*ACM/IEEE 26th International Conference on Model Driven Engineering Languages and Systems (MoDELS 2023)*](https://conf.researchr.org/home/models-2023), Västerås.
+2. [Automated engineering of domain-specific metamorphic testing environments](https://www.sciencedirect.com/science/article/pii/S0950584923000186). Pablo Gómez-Abajo, Pablo C. Cañizares, Alberto Núñez, Esther Guerra, Juan de Lara. 2023. In [*Information and Software Technology*](https://www.sciencedirect.com/journal/information-and-software-technology), Elsevier.
+1. [New ideas: Automated engineering of metamorphic testing environments for domain-specific languages](https://dl.acm.org/doi/10.1145/3486608.3486904). Pablo C. Cañizares, Pablo Gómez-Abajo, Alberto Núñez, Esther Guerra, Juan de Lara. 2021. In the [*ACM SIGPLAN International Conference on Software Language Engineering (SLE 2021)*](https://conf.researchr.org/home/sle-2021?), Chicago. **Best New Ideas/Vision Paper Award at SLE 2021.**
 {: reversed="reversed"}
 
 ### Acknowledgements
 
-This work has been funded by the Spanish Ministry of Science (RTI2018-095255-B-I00, project "MASSIVE") and the R&D programme of Madrid (P2018/TCS-4314, project "[FORTE](https://antares.sip.ucm.es/forte-cm/)").
+This work was funded by the Spanish Ministry of Science through project MASSIVE (RTI2018-095255-B-I00) and by the Madrid R&D programme through project [FORTE](https://antares.sip.ucm.es/forte-cm/) (P2018/TCS-4314).

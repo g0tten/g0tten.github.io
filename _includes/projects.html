@@ -2,14 +2,14 @@
 <div class="col s12">
   <div class="section-banner">
     <span class="eyebrow">Open source</span>
-    <h2>Public repositories from the Gotten organisation</h2>
-    <p>Use the filter to hide forks and focus on primary repositories.</p>
+    <h2>Public repositories maintained by the Gotten organisation</h2>
+    <p>Use the filter to hide forked repositories and focus on the main projects.</p>
   </div>
 </div>
 
 <div class="col s12 switch filter-switch">
   <label>
-    Hide forked repositories
+    Hide forks
     <input class="fork-switch" type="checkbox" onchange="toggleForked()">
     <span class="lever"></span>
   </label>
@@ -27,7 +27,7 @@
       </div>
     </div>
     <div class="repo-card__body">
-      <p>{{repo.description | default: "No description provided."}}</p>
+      <p>{{repo.description | default: "No description is available."}}</p>
       <ul class="repo-meta">
         <li><i class="material-icons">star</i><span>{{repo.stargazers_count}} stars</span></li>
         <li><i class="material-icons">call_split</i><span>{{repo.forks_count}} forks</span></li>

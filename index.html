@@ -17,36 +17,36 @@ css: ["index.css"]
 
 <section class="section-block" id="overview">
   <div class="section-heading">
-    <span class="eyebrow">Comprehensive support for the metamorphic testing process.</span>
+    <span class="eyebrow">A complete workflow for domain-specific metamorphic testing.</span>
     <h2>Overview</h2>
     <p>
-     Gotten automates the construction of Metamorphic Testing (MT) environments. Starting from a meta-model
-     capturing the domain concepts and a description of the domain execution environment, it produces an MT
-     environment with comprehensive support for the MT process: the definition of domain-specific Metamorphic
-     Relations (MRs), their evaluation, detailed reporting of the testing results, and the automated
-     search-based generation of follow-up test cases.
+      Gotten automates the construction of Metamorphic Testing (MT) environments. It starts from a meta-model
+      that captures the concepts of a domain and a description of the domain execution environment. From these
+      artefacts, Gotten produces a tailored environment for defining and evaluating domain-specific Metamorphic
+      Relations (MRs), reporting test results in detail, and generating follow-up test cases through
+      search-based techniques.
     </p>
   </div>
 
   <ul class="capability-list">
-    <li>Definition and execution of domain-specific metamorphic relations with the <strong>mrDSL</strong> language</li>
-    <li>Automated search-based generation of follow-up test cases with the <strong>fowDSL</strong> language</li>
-    <li>Synthesis of a complete MT environment from a domain meta-model and a description of its execution environment</li>
-    <li>Evaluation of MRs over sets of test cases, with detailed reporting of the testing results</li>
+    <li>Definition and execution of domain-specific metamorphic relations with <strong>mrDSL</strong></li>
+    <li>Automated search-based generation of follow-up test cases with <strong>fowDSL</strong></li>
+    <li>Generation of a complete MT environment from a domain meta-model and a description of its execution environment</li>
+    <li>Evaluation of MRs over sets of test cases, with detailed reporting of the results</li>
     <li>Domain independence, demonstrated on cloud simulators, video streaming APIs, autonomous vehicles and finite automata</li>
   </ul>
 
   <p>
-    Metamorphic testing alleviates the oracle problem: instead of checking the output of a single execution
-    against an expected result, it checks relations that must hold among the inputs and outputs of several
-    executions of the program under test. Building an MT environment for a new domain, however, normally
-    requires substantial ad hoc development effort.
+    Metamorphic testing addresses the oracle problem. Instead of comparing the output of one execution with an
+    expected result, it checks relations that should hold among the inputs and outputs of several executions of
+    the system under test. However, constructing an MT environment for a new domain usually requires
+    substantial domain-specific development.
   </p>
   <p>
-    Gotten follows a model-driven approach to remove that effort. Domain experts describe their domain and its
-    execution environment using models, and Gotten generates a tailored MT environment where metamorphic
-    relations can be expressed, executed and analysed, and where follow-up test cases can be synthesised
-    automatically by search-based optimisation.
+    Gotten reduces this effort through model-driven engineering. Domain experts describe the domain and its
+    execution environment using models. Gotten then generates a tailored MT environment in which metamorphic
+    relations can be defined, executed, and analysed, while follow-up test cases can be generated automatically
+    through search-based optimisation.
   </p>
 </section>
 
@@ -76,27 +76,26 @@ css: ["index.css"]
 
 <section class="section-block" id="workflow">
   <div class="section-heading">
-    <span class="eyebrow">From domain model to metamorphic testing results, in five steps.</span>
+    <span class="eyebrow">From domain models to metamorphic testing results in five steps.</span>
     <h2>How Gotten works</h2>
   </div>
 
   <article class="step">
     <h3><span class="step-number">1</span>Model the domain</h3>
     <p>
-      Users start by providing the meta-models that capture the domain concepts — for example, data centres and
-      workloads in the cloud computing domain — together with a description of the domain execution environment
-      (the <em>processor</em> that runs the test cases, such as a simulator or an external API). From this
-      information, Gotten synthesises an MT environment tailored to the domain.
+      Users provide the meta-models that capture the domain concepts—for example, data centres and workloads in
+      the cloud computing domain—together with a description of the domain execution environment. This
+      environment includes the <em>processor</em> that runs the test cases, such as a simulator or an external
+      API. Gotten uses this information to generate an MT environment tailored to the domain.
     </p>
   </article>
 
   <article class="step">
     <h3><span class="step-number">2</span>Define metamorphic relations with mrDSL</h3>
     <p>
-      The generated environment provides a DSL, called <strong>mrDSL</strong>, to define and execute MRs. An
-      mrDSL program declares the domain meta-models and the model instance names, the input features (specified
-      by OCL expressions), the output features, the attributes of the processor, and the metamorphic relations
-      themselves.
+      The generated environment provides a DSL called <strong>mrDSL</strong> for defining and executing MRs. An
+      mrDSL program declares the domain meta-models, model instance names, input features expressed through OCL,
+      output features, processor attributes, and the metamorphic relations to be evaluated.
     </p>
 <pre><code>metamodel datacentre "/sample.gotten/model/datac.ecore" with m1, m2
 models "/sample.gotten/model/dcmodels"
@@ -129,9 +128,9 @@ MetamorphicRelations {
   <article class="step">
     <h3><span class="step-number">3</span>Execute the metamorphic testing process</h3>
     <p>
-      Gotten guides the execution of the MT process through a dedicated wizard. The environment runs the test
-      cases on the domain processor, evaluates the defined MRs over the collected results, and produces a
-      detailed report identifying the relations that were violated and the test cases involved.
+      A dedicated wizard guides users through the MT process. The environment executes the test cases on the
+      domain processor, evaluates the defined MRs over the collected results, and produces a detailed report
+      identifying any violated relations and the test cases involved.
     </p>
     <figure>
       <img src="https://raw.githubusercontent.com/g0tten/images/main/ide/gotten_wizard.png"
@@ -143,12 +142,12 @@ MetamorphicRelations {
   <article class="step">
     <h3><span class="step-number">4</span>Generate follow-up test cases with fowDSL</h3>
     <p>
-      Gotten provides a second DSL, called <strong>fowDSL</strong>, for the automated generation of follow-up
-      test cases; the generation method is based on
-      <a href="http://martin-fleck.github.io/momot/" target="_blank">MOMoT</a>. A fowDSL program states, for
-      each MR, the conditions of the generation: the operations allowed to increase or decrease numeric
-      attributes or to create and delete objects, their limits, the objective to optimise, and the search
-      algorithms to apply.
+      Gotten provides a second DSL, <strong>fowDSL</strong>, for the automated generation of follow-up test cases.
+      The generation method is based on
+      <a href="http://martin-fleck.github.io/momot/" target="_blank">MOMoT</a>. For each MR, a fowDSL program
+      specifies the permitted operations, such as increasing or decreasing numerical attributes or creating and
+      deleting objects. It also defines operation limits, the optimisation objective, and the search algorithms
+      to be applied.
     </p>
 <pre><code>followups for datacentre using MR1
 with source folder = "/sample.gotten/model/dcmodels"
@@ -171,9 +170,8 @@ algorithms [Random, NSGAII, NSGAIII, eMOEA]</code></pre>
   <article class="step">
     <h3><span class="step-number">5</span>Analyse the results</h3>
     <p>
-      Testing results are collected and reported within the environment, enabling users to inspect which MRs
-      hold or fail for which pairs of test cases, and to iterate over the relations, the models and the
-      generation strategies.
+      The environment collects and reports the test results. Users can inspect which MRs hold or fail for each
+      pair of test cases and then refine the relations, models, or generation strategies.
     </p>
     <figure>
       <img src="https://raw.githubusercontent.com/g0tten/images/main/ide/gotten_screenshot.png"
@@ -185,7 +183,7 @@ algorithms [Random, NSGAII, NSGAIII, eMOEA]</code></pre>
 
 <section class="section-block" id="domains">
   <div class="section-heading">
-    <span class="eyebrow">The same metamorphic testing ideas, applied to four domains.</span>
+    <span class="eyebrow">The same metamorphic testing approach applied to four domains.</span>
     <h2>Example domains</h2>
   </div>
 
@@ -205,7 +203,7 @@ algorithms [Random, NSGAII, NSGAIII, eMOEA]</code></pre>
     <article class="info-card domain-card">
       <span class="domain-card__tag">Autonomous vehicles</span>
       <h3>Model autonomous vehicle test scenarios.</h3>
-      <p>Validate autonomous driving controllers varying nominal speeds, numbers of obstacles, and waypoint configurations.</p>
+      <p>Validate autonomous driving controllers under different nominal speeds, numbers of obstacles, and waypoint configurations.</p>
       <a href="{{site.baseurl}}/vehicles.html">Open the autonomous vehicles example</a>
     </article>
     <article class="info-card domain-card">
@@ -219,16 +217,16 @@ algorithms [Random, NSGAII, NSGAIII, eMOEA]</code></pre>
 
 <section class="section-block" id="install">
   <div class="section-heading">
-    <span class="eyebrow">Choose the distribution that fits your workflow.</span>
+    <span class="eyebrow">Choose the installation method that best fits your workflow.</span>
     <h2>Installation</h2>
   </div>
 
   <ul class="capability-list">
-    <li><a href="{{site.update_site_url}}">Gotten Eclipse update site</a>, to be used from the Eclipse <em>Install New Software</em> facility</li>
-    <li><a href="https://www.dropbox.com/scl/fi/r79boq7wxzbwey0n3umwq/eclipse.zip?rlkey=qyb55mg285dsj7w4kwmki0gkd&amp;dl=0" target="_blank">Standalone Eclipse+Gotten for Windows</a></li>
-    <li><a href="https://www.dropbox.com/scl/fi/qnwgkz7r0dk0aa97qe5m0/eclipse.zip?rlkey=oqfhb39zwi8ncqp1ogs20aogz&amp;dl=0" target="_blank">Standalone Eclipse+Gotten for Ubuntu</a></li>
-    <li><a href="https://www.dropbox.com/s/m4s7rjk1tywl8cf/Ubuntu-20.04.x64-Gotten.zip?dl=0" target="_blank">Ubuntu 20.04 VirtualBox VM with Gotten preinstalled</a></li>
-    <li>Sample projects: <a href="https://github.com/g0tten/sample/zipball/main">cloud simple project</a>,
+    <li><a href="{{site.update_site_url}}">Gotten Eclipse update site</a>, for use with the Eclipse <em>Install New Software</em> facility</li>
+    <li><a href="https://www.dropbox.com/scl/fi/r79boq7wxzbwey0n3umwq/eclipse.zip?rlkey=qyb55mg285dsj7w4kwmki0gkd&amp;dl=0" target="_blank">Standalone Eclipse with Gotten for Windows</a></li>
+    <li><a href="https://www.dropbox.com/scl/fi/qnwgkz7r0dk0aa97qe5m0/eclipse.zip?rlkey=oqfhb39zwi8ncqp1ogs20aogz&amp;dl=0" target="_blank">Standalone Eclipse with Gotten for Ubuntu</a></li>
+    <li><a href="https://www.dropbox.com/s/m4s7rjk1tywl8cf/Ubuntu-20.04.x64-Gotten.zip?dl=0" target="_blank">Ubuntu 20.04 VirtualBox virtual machine with Gotten pre-installed</a></li>
+    <li>Sample projects: <a href="https://github.com/g0tten/sample/zipball/main">simple cloud project</a>,
         <a href="https://github.com/g0tten/evaluation/zipball/main">cloud evaluation project</a>, and
         <a href="https://github.com/g0tten/video/zipball/main">video streaming project (YouTube and Vimeo)</a></li>
   </ul>
@@ -242,15 +240,15 @@ algorithms [Random, NSGAII, NSGAIII, eMOEA]</code></pre>
 
 <section class="section-block section-block--accent" id="research">
   <div class="section-heading">
-    <span class="eyebrow">An academic research tool for model-driven engineering and software testing.</span>
+    <span class="eyebrow">An academic research framework for model-driven engineering and software testing.</span>
     <h2>Research context</h2>
   </div>
 
   <h3>Authors and contributors</h3>
   <p>
-    Gotten is developed as part of an academic research effort on the automated engineering of metamorphic
-    testing environments, carried out by researchers at the Universidad Autónoma de Madrid and the Universidad
-    Complutense de Madrid. The tool is developed by
+    Gotten was developed within an academic research programme on the automated engineering of metamorphic
+    testing environments. The work involved researchers from the Universidad Autónoma de Madrid and the
+    Universidad Complutense de Madrid. The framework was developed by
     <a href="https://github.com/gomezabajo" target="_blank">Pablo Gómez-Abajo</a>,
     <a href="https://github.com/PabloCCanizares" target="_blank">Pablo C. Cañizares</a>,
     <a href="https://github.com/albenune" target="_blank">Alberto Núñez</a>,
@@ -259,10 +257,10 @@ algorithms [Random, NSGAII, NSGAIII, eMOEA]</code></pre>
   </p>
 
   <p>
-    Gotten builds on <a href="https://www.eclipse.org/Xtext/" target="_blank">Xtext</a> for the definition of
-    its DSLs, <a href="https://www.eclipse.org/henshin/" target="_blank">Henshin</a> for the transformation
-    units that manipulate the models, and <a href="http://martin-fleck.github.io/momot/" target="_blank">MOMoT</a>
-    for search-based follow-up test case generation.
+    Gotten uses <a href="https://www.eclipse.org/Xtext/" target="_blank">Xtext</a> to define its DSLs,
+    <a href="https://www.eclipse.org/henshin/" target="_blank">Henshin</a> to specify model transformation
+    units, and <a href="http://martin-fleck.github.io/momot/" target="_blank">MOMoT</a> to generate follow-up
+    test cases through search-based techniques.
   </p>
 
   <h3>Selected publications</h3>
@@ -284,7 +282,7 @@ algorithms [Random, NSGAII, NSGAIII, eMOEA]</code></pre>
       <a href="http://arantxa.ii.uam.es/~eguerra/" target="_blank">Guerra, E.</a>,
       <a href="http://arantxa.ii.uam.es/~jlara/" target="_blank">de Lara, J.</a>
       <a href="https://ieeexplore.ieee.org/document/10350786" target="_blank"><span style="font-variant:small-caps;">Gotten</span>: A model-driven solution to engineer domain-specific metamorphic testing environments</a>.
-      2023. <em>ACM/IEEE 26th International Conference on Model Driven Engineering Languages and Systems (MoDELS 2023)</em>, Västerås. Tool demo.
+      2023. <em>ACM/IEEE 26th International Conference on Model Driven Engineering Languages and Systems (MoDELS 2023)</em>, Västerås. Tool demonstration.
     </li>
     <li>
       <a class="pub-icon" href="https://www.sciencedirect.com/science/article/pii/S0950584923000186" target="_blank" aria-label="PDF"><img src="{{site.baseurl}}/assets/res/pdfIcon.png" width="18" height="18" alt=""></a>
@@ -304,17 +302,16 @@ algorithms [Random, NSGAII, NSGAIII, eMOEA]</code></pre>
       <a href="http://arantxa.ii.uam.es/~eguerra/" target="_blank">Guerra, E.</a>,
       <a href="http://arantxa.ii.uam.es/~jlara/" target="_blank">de Lara, J.</a>
       <a href="https://dl.acm.org/doi/10.1145/3486608.3486904" target="_blank">New ideas: Automated engineering of metamorphic testing environments for domain-specific languages</a>.
-      2021. In <em>ACM SIGPLAN International Conference on Software Language Engineering (SLE 2021)</em>, Chicago. <strong>Best new ideas/vision paper award at SLE'21</strong>.
+      2021. In <em>ACM SIGPLAN International Conference on Software Language Engineering (SLE 2021)</em>, Chicago. <strong>Best New Ideas/Vision Paper Award at SLE 2021</strong>.
     </li>
   </ol>
 
 
+  <h3>Acknowledgements</h3>
   <p class="fig-note">
-    <h3>Acknowledgements</h3>
-    <p>
-    This work has been funded by the Spanish Ministry of Science (RTI2018-095255-B-I00, project
-    &ldquo;MASSIVE&rdquo;) and the R&amp;D programme of Madrid (P2018/TCS-4314, project
-    &ldquo;<a href="https://antares.sip.ucm.es/forte-cm/" target="_blank">FORTE</a>&rdquo;).
-    </p>
+    This work was funded by the Spanish Ministry of Science through project MASSIVE
+    (RTI2018-095255-B-I00) and by the Madrid R&amp;D programme through project
+    <a href="https://antares.sip.ucm.es/forte-cm/" target="_blank">FORTE</a>
+    (P2018/TCS-4314).
   </p>
 </section>

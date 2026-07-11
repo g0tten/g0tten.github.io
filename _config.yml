@@ -2,7 +2,7 @@
 title: Gotten
 tagline: Generic MDE framework fOr meTamorphic TEstiNg
 description: >
-  Generic MDE framework fOr meTamorphic TEstiNg
+  A generic model-driven engineering framework for metamorphic testing
 baseurl: ""
 url: "https://g0tten.github.io"
 permalink: /:year/:month/:day/:title
