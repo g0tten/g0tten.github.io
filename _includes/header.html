@@ -40,16 +40,9 @@
   </head>
   <body class="{% if page.title %}page-{{ page.title | slugify }}{% else %}page-home{% endif %}">
     <header>
-      <nav class="top-nav">
-        <div class="nav-wrapper">
-          <div class="container">
-            <a class="page-title" href="{{site.baseurl}}/">{{site.title}}</a>
-            <a href="#" data-activates="slide-out" class="button-collapse top-nav full hide-on-large-only" aria-label="Open navigation">
-              <i class="material-icons">menu</i>
-            </a>
-          </div>
-        </div>
-      </nav>
+      <a href="#" data-activates="slide-out" class="button-collapse drawer-toggle waves-effect waves-light" aria-label="Open navigation menu" title="Menu">
+        <i class="material-icons">menu</i>
+      </a>
 
       <section class="page-header">
         <a class="header-logo" href="{{site.baseurl}}/" aria-label="Gotten home">
@@ -76,6 +69,9 @@
 
       <ul id="slide-out" class="side-nav app-sidenav">
 		<li class="brand-panel">
+		  <a href="#" class="drawer-close" aria-label="Close navigation menu" title="Close menu">
+			<i class="material-icons">close</i>
+		  </a>
 		  <p class="brand-lockup-row">
 			<a class="brand-lockup brand-lockup--gotten" href="{{site.baseurl}}/" aria-label="Gotten home">
 				<img class="brand-logo brand-logo--gotten" src="{{site.baseurl}}/assets/res/gotten.png" alt="Gotten logo">
