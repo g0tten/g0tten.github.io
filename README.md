@@ -48,7 +48,7 @@ Gotten is distributed as a set of Eclipse plug-ins and requires **Java 21**.
 ### Option 2: Use a pre-packaged distribution
 
 - [Standalone Eclipse with Gotten for Windows](https://www.dropbox.com/scl/fi/vkur2m59l42bg41mbjb9b/eclipse.zip?rlkey=714vya0es6bal55qp2rwqyz4c&dl=0)
-- [Standalone Eclipse with Gotten for Ubuntu](https://www.dropbox.com/scl/fi/qnwgkz7r0dk0aa97qe5m0/eclipse.zip?rlkey=oqfhb39zwi8ncqp1ogs20aogz&dl=0)
+- [Standalone Eclipse with Gotten for Ubuntu](https://www.dropbox.com/scl/fi/hjbgcbmf0qomb16jyc6gl/eclipse.zip?rlkey=67fnqcl7whv0lrkhd0x370yh2&dl=0)
 - [Ubuntu 20.04 VirtualBox virtual machine with Gotten pre-installed](https://www.dropbox.com/s/m4s7rjk1tywl8cf/Ubuntu-20.04.x64-Gotten.zip?dl=0)
 
 ## A short example
